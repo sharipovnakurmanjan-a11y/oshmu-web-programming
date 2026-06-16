@@ -1,0 +1,2977 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML, CSS & JavaScript — ОшМУ МФТИТ</title>
+
+<style>
+:root {
+  --brown-dark: #3d1f0a;
+  --brown-mid:  #5c2e0e;
+  --brown-light:#8b4513;
+  --gold:       #c8922a;
+  --gold-light: #e8b84b;
+  --cream:      #fdf6ed;
+  --cream2:     #f5ead6;
+  --cream3:     #ede0c4;
+  --text:       #2d1a06;
+  --text-mid:   #5c3a1a;
+  --text-muted: #9a7a55;
+  --sidebar-w:  280px;
+  --correct:    #2d7a2d;
+  --wrong:      #8b1a1a;
+  }
+ 
+*{margin:0;padding:0;box-sizing:border-box;}
+ 
+body{
+  font-family:Georgia, 'Times New Roman', serif;
+  background:var(--cream);
+  color:var(--text);
+  display:flex;
+  min-height:100vh;
+}
+ 
+/* ========== COVER / LANDING ========== */
+
+ 
+
+ 
+
+ 
+.cover-inner::before,
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+.cover-title-main span
+.cover-title-main span
+.cover-title-main span
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+/* ========== SIDEBAR ========== */
+#app{display:flex;width:100%;min-height:100vh;}
+ 
+.sidebar{
+  position:fixed;
+  left:0;top:0;bottom:0;
+  width:var(--sidebar-w);
+  background:var(--brown-dark);
+  overflow-y:auto;
+  z-index:200;
+  display:flex;flex-direction:column;
+}
+ 
+.sidebar::-webkit-scrollbar{width:4px;}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(200,146,42,0.3);border-radius:2px;}
+ 
+.sidebar-head{
+  padding:24px 20px 16px;
+  border-bottom:1px solid rgba(200,146,42,0.15);
+  text-align:center;
+}
+ 
+.sidebar-logo-icon{font-size:36px;margin-bottom:8px;}
+ 
+.sidebar-univ{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:9.5px;letter-spacing:1px;
+  color:var(--gold);text-transform:uppercase;
+  line-height:1.55;margin-bottom:4px;
+}
+ 
+.sidebar-inst{
+  font-family:'Courier New', Courier, monospace;
+  font-size:8px;letter-spacing:2px;
+  color:rgba(200,146,42,0.5);
+  text-transform:uppercase;margin-bottom:12px;
+}
+ 
+.sidebar-title{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-style:italic;font-size:18px;
+  color:var(--gold-light);
+  line-height:1.2;
+}
+ 
+.nav-section-label{
+  padding:14px 20px 4px;
+  font-family:'Courier New', Courier, monospace;
+  font-size:9px;letter-spacing:3px;
+  color:rgba(200,146,42,0.5);
+  text-transform:uppercase;
+}
+ 
+.nav-item{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 20px;cursor:pointer;
+  font-family:Georgia, 'Times New Roman', serif;font-size:13px;
+  color:rgba(255,255,255,0.55);
+  border-left:3px solid transparent;
+  transition:all 0.18s;
+  line-height:1.3;
+  user-select:none;
+  -webkit-tap-highlight-color:rgba(200,146,42,0.2);
+}
+ 
+.nav-item:hover{
+  color:rgba(255,255,255,0.9);
+  background:rgba(200,146,42,0.08);
+}
+ 
+.nav-item.active{
+  color:var(--gold-light);
+  border-left-color:var(--gold);
+  background:rgba(200,146,42,0.1);
+  font-weight:600;
+}
+ 
+.nav-num{
+  font-family:'Courier New', Courier, monospace;
+  font-size:9px;color:rgba(200,146,42,0.5);
+  flex-shrink:0;min-width:18px;
+}
+ 
+.nav-item.active .nav-num{color:var(--gold);}
+ 
+.sidebar-progress{
+  padding:16px 20px 20px;
+  border-top:1px solid rgba(200,146,42,0.15);
+  margin-top:auto;
+  flex-shrink:0;
+}
+ 
+.progress-label{
+  display:flex;justify-content:space-between;
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;color:rgba(200,146,42,0.5);
+  margin-bottom:6px;
+}
+ 
+.progress-bar{
+  height:3px;background:rgba(200,146,42,0.15);
+  border-radius:2px;overflow:hidden;
+}
+ 
+.progress-fill{
+  height:100%;
+  background:linear-gradient(to right,var(--gold),var(--gold-light));
+  border-radius:2px;
+  transition:width 0.5s;
+}
+ 
+/* ========== MAIN CONTENT ========== */
+.main{
+  margin-left:var(--sidebar-w);
+  flex:1;min-height:100vh;
+  display:flex;flex-direction:column;
+}
+ 
+/* Top bar */
+.topbar{
+  position:sticky;top:0;
+  background:rgba(253,246,237,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--cream3);
+  padding:12px 32px;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  z-index:100;
+}
+ 
+.breadcrumb{
+  font-family:'Courier New', Courier, monospace;
+  font-size:11px;color:var(--text-muted);
+  display:flex;align-items:center;gap:6px;
+}
+ 
+.breadcrumb .cur{color:var(--brown-mid);font-weight:600;}
+ 
+.topbar-nav{display:flex;gap:8px;}
+ 
+.btn-nav{
+  background:var(--cream2);
+  border:1px solid var(--cream3);
+  color:var(--text-mid);
+  padding:7px 18px;border-radius:4px;
+  cursor:pointer;
+  font-family:Georgia, 'Times New Roman', serif;font-size:13px;
+  transition:all 0.2s;
+}
+ 
+.btn-nav:hover:not(:disabled){
+  background:var(--brown-dark);
+  color:var(--gold-light);
+  border-color:var(--brown-dark);
+}
+ 
+.btn-nav:disabled{opacity:0.3;cursor:default;}
+ 
+/* Page */
+.page{display:none;padding:40px 48px 60px;max-width:860px;animation:fadeUp 0.4s ease;}
+.page.active{display:block;}
+ 
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(14px);}
+  to{opacity:1;transform:translateY(0);}
+}
+ 
+/* Page number */
+.page-num-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:32px;
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;color:var(--text-muted);
+}
+ 
+.page-num-center{
+  font-family:Georgia, 'Times New Roman', serif;font-style:italic;
+  font-size:12px;color:var(--text-muted);
+}
+ 
+/* Chapter header */
+.chap-header{margin-bottom:32px;}
+ 
+.chap-tag{
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;letter-spacing:3px;
+  color:var(--text-muted);text-transform:uppercase;
+  margin-bottom:8px;
+}
+ 
+.chap-title{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:38px;font-weight:900;
+  line-height:1.1;margin-bottom:10px;
+}
+ 
+.chap-title.html{color:#7a2010;}
+.chap-title.css {color:#1a5f5f;}
+.chap-title.js  {color:#5a4500;}
+ 
+.chap-sub{
+  font-family:Georgia, 'Times New Roman', serif;font-style:italic;
+  font-size:15px;color:var(--text-muted);
+  line-height:1.6;
+}
+ 
+.ornament{
+  text-align:center;color:var(--gold);
+  font-size:16px;letter-spacing:8px;opacity:0.5;
+  margin:24px 0;
+}
+ 
+/* Prose */
+.prose{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:15px;line-height:1.85;
+  color:var(--text-mid);
+  margin-bottom:14px;
+  text-align:justify;
+}
+ 
+.prose strong{color:var(--text);font-weight:600;}
+.prose em{font-style:italic;}
+.prose code{
+  font-family:'Courier New', Courier, monospace;
+  font-size:12px;
+  background:var(--cream2);
+  border:1px solid var(--cream3);
+  padding:1px 5px;border-radius:3px;
+  color:var(--brown-light);
+}
+ 
+/* Drop cap */
+.drop-cap::first-letter{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:58px;font-weight:900;
+  float:left;line-height:0.82;
+  margin-right:8px;margin-top:5px;
+  color:var(--gold);
+}
+ 
+/* Section */
+.sec-title{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:20px;font-weight:700;
+  color:var(--text);
+  margin:28px 0 12px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--cream3);
+  display:flex;align-items:center;gap:10px;
+}
+ 
+.sec-num{
+  font-family:'Courier New', Courier, monospace;
+  font-size:11px;color:var(--gold);
+  background:rgba(200,146,42,0.1);
+  padding:2px 8px;border-radius:3px;
+}
+ 
+/* Info boxes */
+.info-box{
+  border-left:3px solid var(--gold);
+  background:rgba(200,146,42,0.07);
+  padding:14px 18px;margin:18px 0;
+  border-radius:0 6px 6px 0;
+}
+ 
+.info-box.teal{border-color:#1a5f5f;background:rgba(26,95,95,0.06);}
+.info-box.red{border-color:#8b1a1a;background:rgba(139,26,26,0.06);}
+.info-box.green{border-color:#2d6a2d;background:rgba(45,106,45,0.06);}
+ 
+.info-label{
+  font-family:'Courier New', Courier, monospace;
+  font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:6px;font-weight:600;
+}
+ 
+.info-box.teal .info-label{color:#1a5f5f;}
+.info-box.red  .info-label{color:#8b1a1a;}
+.info-box.green .info-label{color:#2d6a2d;}
+ 
+/* Code block */
+.code-wrap{
+  background:#1e1208;
+  border-radius:8px;
+  margin:18px 0;
+  overflow:hidden;
+  border:1px solid rgba(200,146,42,0.15);
+}
+ 
+.code-header{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:8px 14px;
+  background:#0f0803;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+ 
+.code-dots{display:flex;gap:5px;}
+.code-dots span{width:10px;height:10px;border-radius:50%;}
+.code-dots span:nth-child(1){background:#ff5f56;}
+.code-dots span:nth-child(2){background:#ffbd2e;}
+.code-dots span:nth-child(3){background:#27c93f;}
+ 
+.code-lang{
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+}
+ 
+.code-lang.html{color:#e07050;}
+.code-lang.css {color:#50c0c0;}
+.code-lang.js  {color:#d4a017;}
+.code-lang.result{color:#7a9a5a;}
+ 
+.copy-btn{
+  background:none;
+  border:1px solid rgba(200,146,42,0.3);
+  color:rgba(200,146,42,0.6);
+  padding:3px 10px;border-radius:3px;
+  cursor:pointer;
+  font-family:'Courier New', Courier, monospace;font-size:10px;
+  transition:all 0.2s;
+}
+ 
+.copy-btn:hover{color:var(--gold);border-color:var(--gold);}
+ 
+pre.code-pre{
+  padding:18px 16px;
+  font-family:'Courier New', Courier, monospace;
+  font-size:12.5px;line-height:1.7;
+  color:#c8c0a8;overflow-x:auto;
+}
+ 
+/* Syntax */
+.k{color:#c678dd;}
+.t{color:#e07050;}
+.a{color:#50c0c0;}
+.s{color:#98c379;}
+
+.p{color:#d4a017;}
+.v{color:#e5c07b;}
+.f{color:#61afef;}
+.n{color:#e06c75;}
+ 
+/* Table */
+.table-wrap{
+  overflow-x:auto;margin:18px 0;
+  border-radius:6px;
+  border:1px solid var(--cream3);
+}
+ 
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+ 
+th{
+  background:var(--cream2);
+  padding:10px 14px;text-align:left;
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;letter-spacing:2px;
+  color:var(--text-muted);text-transform:uppercase;
+  border-bottom:1px solid var(--cream3);
+}
+ 
+td{
+  padding:10px 14px;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+  font-family:Georgia, 'Times New Roman', serif;font-size:13.5px;
+  color:var(--text-mid);line-height:1.5;
+}
+ 
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(0,0,0,0.02);}
+td code{
+  font-family:'Courier New', Courier, monospace;font-size:11px;
+  background:var(--cream2);border:1px solid var(--cream3);
+  padding:1px 5px;border-radius:3px;color:var(--brown-light);
+}
+ 
+/* ===== VIDEO EMBED ===== */
+.video-section{margin:28px 0;}
+ 
+.video-label{
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;letter-spacing:3px;
+  color:var(--text-muted);text-transform:uppercase;
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+ 
+.video-label::after{
+  content:'';flex:1;height:1px;
+  background:var(--cream3);
+}
+ 
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+ 
+.video-card{
+  background:var(--cream2);
+  border:1px solid var(--cream3);
+  border-radius:8px;overflow:hidden;
+  cursor:pointer;transition:all 0.25s;
+}
+ 
+.video-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.12);
+  border-color:var(--gold);
+}
+ 
+.video-thumb{
+  position:relative;
+  background:#1a1208;
+  aspect-ratio:16/9;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+ 
+.video-thumb iframe{
+  width:100%;height:100%;border:none;display:block;
+}
+ 
+.play-overlay{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0.35);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity 0.2s;
+}
+ 
+.play-btn-big{
+  width:52px;height:52px;
+  background:rgba(200,146,42,0.9);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;color:#fff;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+ 
+.video-card:hover .play-overlay{opacity:0;}
+ 
+.video-info{padding:12px 14px;}
+ 
+.video-title{
+  font-family:Georgia, 'Times New Roman', serif;font-size:13px;
+  font-weight:600;color:var(--text);
+  margin-bottom:4px;line-height:1.4;
+}
+ 
+.video-meta{
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;color:var(--text-muted);
+}
+ 
+/* Video Modal */
+.video-modal{
+  display:none;position:fixed;inset:0;z-index:9000;
+  background:rgba(0,0,0,0.88);
+  align-items:center;justify-content:center;
+  padding:20px;
+}
+ 
+.video-modal.open{display:flex;}
+ 
+.video-modal-inner{
+  width:100%;max-width:800px;
+  background:#0f0803;
+  border-radius:10px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.7);
+  border:1px solid rgba(200,146,42,0.2);
+}
+ 
+.video-modal-head{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:12px 18px;
+  background:#1a1208;
+  border-bottom:1px solid rgba(200,146,42,0.1);
+}
+ 
+.video-modal-title{
+  font-family:Georgia, 'Times New Roman', serif;font-size:14px;
+  color:var(--gold-light);
+}
+ 
+.modal-close{
+  background:none;border:none;
+  color:rgba(200,146,42,0.6);
+  font-size:22px;cursor:pointer;
+  line-height:1;transition:color 0.2s;
+}
+ 
+.modal-close:hover{color:var(--gold-light);}
+ 
+.video-modal-frame{
+  position:relative;padding-bottom:56.25%;height:0;
+}
+ 
+.video-modal-frame iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;border:none;
+}
+ 
+/* Quiz */
+.quiz-box{
+  background:var(--cream2);
+  border:1px solid var(--cream3);
+  border-radius:8px;padding:22px;
+  margin:24px 0;
+}
+ 
+.quiz-title{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-style:italic;font-size:13px;
+  color:var(--gold);margin-bottom:10px;
+}
+ 
+.quiz-q{
+  font-family:Georgia, 'Times New Roman', serif;font-size:15px;
+  font-weight:600;color:var(--text);
+  margin-bottom:14px;line-height:1.4;
+}
+ 
+.quiz-opts{display:grid;gap:8px;}
+ 
+.quiz-opt{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 14px;
+  background:#fff;
+  border:1px solid var(--cream3);
+  border-radius:6px;cursor:pointer;
+  font-family:Georgia, 'Times New Roman', serif;font-size:14px;
+  color:var(--text-mid);transition:all 0.2s;
+}
+ 
+.quiz-opt:hover:not(.done){
+  border-color:var(--gold);
+  background:rgba(200,146,42,0.05);
+}
+ 
+.quiz-opt.correct{
+  border-color:#2d7a2d;
+  background:rgba(45,122,45,0.08);
+  color:#1a5a1a;
+}
+ 
+.quiz-opt.wrong{
+  border-color:#8b1a1a;
+  background:rgba(139,26,26,0.08);
+  color:#6a1010;
+}
+ 
+.opt-letter{
+  font-family:'Courier New', Courier, monospace;
+  font-size:11px;width:24px;height:24px;
+  border-radius:4px;border:1px solid var(--cream3);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:var(--gold);font-weight:600;
+  background:var(--cream);
+}
+ 
+.quiz-result{
+  margin-top:10px;
+  font-family:Georgia, 'Times New Roman', serif;font-style:italic;
+  font-size:14px;padding:8px 12px;border-radius:5px;
+  display:none;
+}
+ 
+.quiz-result.show{display:block;}
+.quiz-result.ok{color:#1a5a1a;background:rgba(45,122,45,0.1);}
+.quiz-result.err{color:#6a1010;background:rgba(139,26,26,0.1);}
+ 
+/* Chapter end */
+.chap-end{
+  text-align:center;padding:32px;
+  background:var(--cream2);
+  border:1px solid var(--cream3);
+  border-radius:8px;margin-top:40px;
+}
+ 
+.chap-end-icon{font-size:36px;margin-bottom:10px;}
+.chap-end h3{font-family:Georgia, 'Times New Roman', serif;font-size:20px;margin-bottom:6px;}
+.chap-end p{font-family:Georgia, 'Times New Roman', serif;font-style:italic;font-size:14px;color:var(--text-muted);margin-bottom:18px;}
+ 
+.btn-next-chap{
+  display:inline-block;
+  padding:12px 32px;border-radius:5px;
+  cursor:pointer;font-family:Georgia, 'Times New Roman', serif;
+  font-size:15px;font-weight:600;border:none;
+  transition:all 0.2s;
+  background:var(--brown-dark);color:var(--gold-light);
+}
+ 
+.btn-next-chap:hover{
+  background:var(--brown-mid);
+  transform:translateY(-2px);
+}
+ 
+/* Live demo */
+.demo-box{
+  border:1px solid var(--cream3);
+  border-radius:8px;overflow:hidden;margin:18px 0;
+}
+ 
+.demo-head{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:9px 14px;background:var(--cream2);
+  border-bottom:1px solid var(--cream3);
+}
+ 
+.demo-label{
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;letter-spacing:2px;color:var(--text-muted);
+  text-transform:uppercase;
+}
+ 
+.demo-run{
+  background:var(--brown-dark);color:var(--gold-light);
+  border:none;padding:5px 14px;border-radius:4px;
+  cursor:pointer;font-family:'Courier New', Courier, monospace;
+  font-size:11px;font-weight:600;transition:all 0.2s;
+}
+ 
+.demo-run:hover{background:var(--brown-mid);}
+ 
+.demo-editor{
+  width:100%;min-height:100px;
+  background:#1e1208;color:#98c379;
+  border:none;padding:14px;resize:vertical;
+  font-family:'Courier New', Courier, monospace;font-size:13px;
+  line-height:1.6;outline:none;
+}
+ 
+.demo-output{
+  border-top:1px solid var(--cream3);
+  background:#fff;min-height:60px;
+}
+ 
+.demo-output iframe{width:100%;min-height:60px;border:none;display:block;}
+ 
+/* Divider */
+.divider{height:1px;background:linear-gradient(to right,var(--cream3),transparent);margin:28px 0;}
+ 
+/* Calc project */
+#live-calc-wrap{display:flex;justify-content:center;margin:20px 0;}
+ 
+#project-calc{
+  background:#1e1208;border-radius:16px;
+  padding:20px;width:260px;
+  border:1px solid rgba(200,146,42,0.2);
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+}
+ 
+#pc-display{
+  background:#0f0803;border-radius:10px;
+  padding:14px 12px 10px;text-align:right;
+  margin-bottom:14px;
+  border:1px solid rgba(200,146,42,0.1);
+}
+ 
+#pc-expr{
+  font-family:'Courier New', Courier, monospace;
+  font-size:10px;color:rgba(200,146,42,0.4);
+  min-height:14px;margin-bottom:4px;
+}
+ 
+#pc-val{
+  font-family:'Courier New', Courier, monospace;
+  font-size:30px;color:#f5f0e8;
+  word-break:break-all;
+}
+ 
+#pc-btns{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
+}
+ 
+/* Mobile menu */
+.menu-toggle{
+  display:none;background:var(--brown-dark);
+  border:1px solid rgba(200,146,42,0.3);
+  color:var(--gold);padding:7px 13px;
+  border-radius:4px;cursor:pointer;font-size:18px;
+}
+ 
+@media(max-width:768px){
+  :root{--sidebar-w:0px;}
+  .sidebar{width:260px;transform:translateX(-100%);transition:transform 0.3s;}
+  .sidebar.open{transform:translateX(0);}
+  .main{margin-left:0;}
+  .menu-toggle{display:block;}
+  .page{padding:28px 20px 40px;}
+  .topbar{padding:10px 16px;}
+  .video-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+ 
+<!-- ==================== COVER ==================== -->
+<!-- ==================== APP ==================== -->
+<div id="app">
+ 
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <div class="sidebar-logo-icon">📚</div>
+    <div class="sidebar-univ">ОШ МАМЛЕКЕТТИК УНИВЕРСИТЕТИ</div>
+    <div class="sidebar-inst">МФТИТ ИНСТИТУТУ</div>
+    <div class="sidebar-title">HTML, CSS &<br>JavaScript</div>
+  </div>
+ 
+  <nav style="flex:1;padding-bottom:8px;" id="main-nav">
+    <div class="nav-section-label">Башкы</div>
+    <div class="nav-item active" data-idx="0" onclick="goTo(0,this)"><span class="nav-num">—</span>Титул барак</div>
+ 
+    <div class="nav-section-label">HTML</div>
+    <div class="nav-item" data-idx="1" onclick="goTo(1,this)"><span class="nav-num">01</span>HTML негиздери</div>
+    <div class="nav-item" data-idx="2" onclick="goTo(2,this)"><span class="nav-num">02</span>Теглер жана атрибуттар</div>
+    <div class="nav-item" data-idx="3" onclick="goTo(3,this)"><span class="nav-num">03</span>Формалар жана таблицалар</div>
+    <div class="nav-item" data-idx="4" onclick="goTo(4,this)"><span class="nav-num">04</span>Семантикалык HTML</div>
+ 
+    <div class="nav-section-label">CSS</div>
+    <div class="nav-item" data-idx="5" onclick="goTo(5,this)"><span class="nav-num">05</span>CSS негиздери</div>
+    <div class="nav-item" data-idx="6" onclick="goTo(6,this)"><span class="nav-num">06</span>Сайлагычтар жана касиеттер</div>
+    <div class="nav-item" data-idx="7" onclick="goTo(7,this)"><span class="nav-num">07</span>Flexbox жана Grid</div>
+    <div class="nav-item" data-idx="8" onclick="goTo(8,this)"><span class="nav-num">08</span>Анимациялар & Media Query</div>
+ 
+    <div class="nav-section-label">JavaScript</div>
+    <div class="nav-item" data-idx="9"  onclick="goTo(9,this)"><span class="nav-num">09</span>JS негиздери</div>
+    <div class="nav-item" data-idx="10" onclick="goTo(10,this)"><span class="nav-num">10</span>Функциялар жана массивдер</div>
+    <div class="nav-item" data-idx="11" onclick="goTo(11,this)"><span class="nav-num">11</span>DOM менен иштөө</div>
+    <div class="nav-item" data-idx="12" onclick="goTo(12,this)"><span class="nav-num">12</span>Окуялар жана API</div>
+    <div class="nav-item" data-idx="13" onclick="goTo(13,this)"><span class="nav-num">13</span>Долбоор — Калькулятор</div>
+
+    <div class="nav-section-label">CSS Өнүккөн</div>
+    <div class="nav-item" data-idx="14" onclick="goTo(14,this)"><span class="nav-num">14</span>Transform & Filter</div>
+    <div class="nav-item" data-idx="15" onclick="goTo(15,this)"><span class="nav-num">15</span>Түс теориясы & Дизайн</div>
+
+    <div class="nav-section-label">JS Өнүккөн</div>
+    <div class="nav-item" data-idx="16" onclick="goTo(16,this)"><span class="nav-num">16</span>Объекттер & Класстар</div>
+    <div class="nav-item" data-idx="17" onclick="goTo(17,this)"><span class="nav-num">17</span>Promise & Async/Await</div>
+    <div class="nav-item" data-idx="18" onclick="goTo(18,this)"><span class="nav-num">18</span>LocalStorage</div>
+
+    <div class="nav-section-label">Долбоорлор</div>
+    <div class="nav-item" data-idx="19" onclick="goTo(19,this)"><span class="nav-num">19</span>To-Do Тизмеси</div>
+    <div class="nav-item" data-idx="20" onclick="goTo(20,this)"><span class="nav-num">20</span>Жыйынтык</div>
+  </nav>
+ 
+  <div class="sidebar-progress">
+    <div style="font-family:'Courier New', Courier, monospace;font-size:9px;letter-spacing:3px;color:rgba(200,146,42,0.5);text-transform:uppercase;margin-bottom:12px;text-align:center;">ПРОГРЕСС</div>
+ 
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-family:'Courier New', Courier, monospace;font-size:10px;color:rgba(200,146,42,0.5);margin-bottom:4px;">
+        <span>HTML</span><span id="pct-html">0%</span>
+      </div>
+      <div style="height:3px;background:rgba(200,146,42,0.12);border-radius:2px;overflow:hidden;">
+        <div id="pfill-html" style="height:100%;width:0%;background:#c8922a;border-radius:2px;transition:width 0.5s;"></div>
+      </div>
+    </div>
+ 
+    <div style="margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;font-family:'Courier New', Courier, monospace;font-size:10px;color:rgba(200,146,42,0.5);margin-bottom:4px;">
+        <span>CSS</span><span id="pct-css">0%</span>
+      </div>
+      <div style="height:3px;background:rgba(200,146,42,0.12);border-radius:2px;overflow:hidden;">
+        <div id="pfill-css" style="height:100%;width:0%;background:#c8922a;border-radius:2px;transition:width 0.5s;"></div>
+      </div>
+    </div>
+ 
+    <div>
+      <div style="display:flex;justify-content:space-between;font-family:'Courier New', Courier, monospace;font-size:10px;color:rgba(200,146,42,0.5);margin-bottom:4px;">
+        <span>JS</span><span id="pct-js">0%</span>
+      </div>
+      <div style="height:3px;background:rgba(200,146,42,0.12);border-radius:2px;overflow:hidden;">
+        <div id="pfill-js" style="height:100%;width:0%;background:#c8922a;border-radius:2px;transition:width 0.5s;"></div>
+      </div>
+    </div>
+  </div>
+</aside>
+ 
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumb">
+        <span>Окуулук</span>
+        <span style="opacity:0.4;">/</span>
+        <span class="cur" id="bc">Титул барак</span>
+      </div>
+    </div>
+    <div class="topbar-nav">
+      <button class="btn-nav" id="btn-prev" onclick="prev()" disabled>← Артка</button>
+      <button class="btn-nav" id="btn-next" onclick="next()">Алга →</button>
+    </div>
+  </div>
+ 
+  <!-- ======== PAGE 0 — TITLE ======== -->
+  <div class="page active" id="p0" style="padding:0;max-width:100%;">
+    <!-- ══════════ ТИТУЛДУК БАРАКЧА ══════════ -->
+    <div style="
+      min-height:calc(100vh - 57px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:50px 80px;
+      font-family:Georgia,'Times New Roman',serif;
+      background:#fdfaf5;
+      color:#1a1a1a;
+      text-align:center;
+      max-width:860px;
+      margin:0 auto;
+      box-sizing:border-box;
+    ">
+
+      <!-- МИНИСТРЛИК -->
+      <div style="font-size:13px;font-weight:700;letter-spacing:0.5px;
+                  line-height:1.9;margin-bottom:4px;text-transform:uppercase;">
+        КЫРГЫЗ РЕСПУБЛИКАСЫНЫН ИЛИМ, ЖОГОРКУ БИЛИМ БЕРҮҮ<br>
+        ЖАНА ИННОВАЦИЯЛАР МИНИСТРЛИГИ
+      </div>
+
+      <!-- УНИВЕРСИТЕТ -->
+      <div style="font-size:16px;font-weight:700;letter-spacing:1px;
+                  margin-bottom:16px;text-transform:uppercase;">
+        ОШ МАМЛЕКЕТТИК УНИВЕРСИТЕТИ
+      </div>
+
+      <!-- ИНСТИТУТ -->
+      <div style="font-size:13px;color:#333;line-height:1.7;margin-bottom:2px;">
+        Математика, физика, техника жана информациялык технологиялар институту
+      </div>
+
+      <!-- КАФЕДРА -->
+      <div style="font-size:13px;color:#333;margin-bottom:32px;">
+        Колдонмо математика, информатика жана графикалык дизайн кафедрасы
+      </div>
+
+      <!-- АВТОР -->
+      <div style="font-size:17px;font-weight:700;letter-spacing:1px;
+                  margin-bottom:32px;text-transform:uppercase;">
+        ЧЫНЫБЕКОВ НУРГАЗЫ ЧЫНЫБЕКОВИЧ
+      </div>
+
+      <!-- ЖУМУШТУН АТАЛЫШЫ -->
+      <div style="font-size:32px;font-weight:1200;letter-spacing:0.5px;
+                  margin-bottom:18px;text-transform:uppercase;">
+        КВАЛИФИКАЦИЯЛЫК ЖУМУШ
+      </div>
+
+      <!-- БАГЫТ -->
+      <div style="font-size:13px;font-weight:600;margin-bottom:14px;">
+        Багыты: 570400 – Дизайн (Графикалык дизайн)
+      </div>
+
+      <!-- ТЕМА -->
+      <div style="font-size:13px;font-style:italic;color:#333;line-height:1.9;
+                  margin-bottom:32px;border:1px solid #bbb;padding:14px 24px;
+                  border-radius:3px;max-width:560px;width:100%;box-sizing:border-box;">
+        <strong style="font-style:normal;">Темасы:</strong>
+        «HTML, CSS жана JavaScript каражаттарынын жардамында<br>
+        программалоо курсу боюнча электрондук окуулук түзүү.»
+      </div>
+
+      <!-- МААЛЫМАТ ТАБЛИЦАСЫ -->
+      <table style="font-size:13px;color:#1a1a1a;margin-bottom:28px;
+                    max-width:540px;width:100%;text-align:left;
+                    border-collapse:collapse;line-height:2.4;">
+        <tr>
+          <td style="padding-right:20px;white-space:nowrap;">ГД(д)-21 тайпасынын студенти:</td>
+          <td style="font-weight:700;">Н.Ч. Чыныбеков</td>
+        </tr>
+        <tr>
+          <td style="padding-right:20px;vertical-align:top;padding-top:8px;">
+            Илимий жетекчиси – окутуучу:
+          </td>
+          <td style="padding-top:8px;">
+            <span style="display:inline-block;min-width:120px;
+                         border-bottom:1px solid #555;margin-right:8px;">&nbsp;</span>
+            Ж. Гайып уулу
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-right:20px;vertical-align:top;padding-top:8px;">
+            Рецензент –<br>КМИГД каф. окутуучусу:
+          </td>
+          <td style="vertical-align:top;padding-top:8px;">
+            <span style="display:inline-block;min-width:100px;
+                         border-bottom:1px solid #555;margin-right:8px;">&nbsp;</span>
+            Т.М. Жолдошев
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"
+              style="border-top:1px solid #ccc;padding-top:10px;padding-bottom:4px;">
+            Коргоого уруксат берилди: «___» ________________ 2026-ж.
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-right:20px;vertical-align:top;">
+            КМИГД каф. башчысы,<br>тех.и.к., доцент:
+          </td>
+          <td style="vertical-align:top;">Т.М. Жолдошов</td>
+        </tr>
+      </table>
+
+      <!-- ШАА Р & ЖЫЛ -->
+      <div style="font-size:14px;font-weight:700;letter-spacing:4px;
+                  text-transform:uppercase;margin-top:8px;">
+        ОШ – 2026
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======== PAGE 1 — HTML BASICS ======== -->
+  <div class="page" 
+id="p1">
+    <div class="page-num-bar"><span>HTML / Глава 01</span><span class="page-num-center">— 1 / 20 —</span><span>HTML Негиздери</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 01 · HTML</div>
+      <div class="chap-title html">HTML Негиздери</div>
+      <div class="chap-sub">HyperText Markup Language — веб-баракчанын скелети жана тиреги</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+ 
+    <p class="prose drop-cap">HTML — <strong>HyperText Markup Language</strong> деп толук ачылат. Аны 1991-жылы британиялык окумуштуу <strong>Тим Бернерс-Ли</strong> ойлоп тапкан. Бүгүнкү күндө интернеттеги бардык сайттар HTML негизинде иштейт. HTML — программалоо тили эмес, ал <em>белгилөө тили</em> (markup language).</p>
+ 
+    <div class="info-box teal">
+      <div class="info-label">📌 Маанилүү</div>
+      <p class="prose" style="margin:0;">HTML браузерге мазмунду <strong>кантип көрсөтүүнү</strong> айтат. Азыркы учурда <strong>HTML5</strong> версиясы колдонулат — ал видео, аудио, геолокация, canvas жана башка заманбап мүмкүнчүлүктөрдү колдойт.</p>
+    </div>
+ 
+    <div class="sec-title"><span class="sec-num">1.1</span> HTML документинин структурасы</div>
+    <p class="prose">Ар бир HTML файл бир стандарттуу скелетке ээ. Бул скелет браузерге документти туура окуу мүмкүнчүлүгүн берет:</p>
+ 
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <span class="code-lang html">HTML — index.html</span>
+        <button class="copy-btn" onclick="copyCode(this)">Көчүр</button>
+      </div>
+      <pre class="code-pre"><span class="c">&lt;!-- HTML5 декларациясы --&gt;</span>
+<span class="t">&lt;!DOCTYPE html&gt;</span>
+<span class="t">&lt;html</span> <span class="a">lang</span>=<span class="s">"ky"</span><span class="t">&gt;</span>
+ 
+  <span class="t">&lt;head&gt;</span>
+    <span class="c">&lt;!-- Мета маалымат --&gt;</span>
+    <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="s">"UTF-8"</span><span class="t">&gt;</span>
+    <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="s">"viewport"</span> <span class="a">content</span>=<span class="s">"width=device-width, initial-scale=1.0"</span><span class="t">&gt;</span>
+    <span class="t">&lt;title&gt;</span>Менин биринчи сайтым<span class="t">&lt;/title&gt;</span>
+    <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="s">"stylesheet"</span> <span class="a">href</span>=<span class="s">"style.css"</span><span class="t">&gt;</span>
+  <span class="t">&lt;/head&gt;</span>
+ 
+  <span class="t">&lt;body&gt;</span>
+    <span class="c">&lt;!-- Колдонуучуга көрүнүүчү мазмун --&gt;</span>
+    <span class="t">&lt;h1&gt;</span>Саламатсызбы, Дүйнө!<span class="t">&lt;/h1&gt;</span>
+    <span class="t">&lt;p&gt;</span>Бул менин биринчи HTML барагым.<span class="t">&lt;/p&gt;</span>
+    <span class="t">&lt;script</span> <span class="a">src</span>=<span class="s">"script.js"</span><span class="t">&gt;&lt;/script&gt;</span>
+  <span class="t">&lt;/body&gt;</span>
+ 
+<span class="t">&lt;/html&gt;</span></pre>
+    </div>
+ 
+    <div class="table-wrap">
+      <table>
+        <tr><th>Тег</th><th>Максаты</th><th>Эскертме</th></tr>
+        <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>HTML5 документ деп билдирет</td><td>Дайыма биринчи болот</td></tr>
+        <tr><td><code>&lt;html&gt;</code></td><td>Тамыр элемент</td><td>lang атрибуту менен</td></tr>
+        <tr><td><code>&lt;head&gt;</code></td><td>Мета маалымат</td><td>Колдонуучуга көрүнбөйт</td></tr>
+        <tr><td><code>&lt;meta charset&gt;</code></td><td>Символ коддоосу</td><td>UTF-8 — кыргызча үчүн</td></tr>
+        <tr><td><code>&lt;title&gt;</code></td><td>Браузер өтмөгүнүн аты</td><td>SEO үчүн маанилүү</td></tr>
+        <tr><td><code>&lt;body&gt;</code></td><td>Баракчанын мазмуну</td><td>Баары бул жерде</td></tr>
+      </table>
+    </div>
+ 
+    <div class="sec-title"><span class="sec-num">1.2</span> Жандуу мисал — Аракет кылып көр!</div>
+    <div class="demo-box">
+      <div class="demo-head">
+        <span class="demo-label">🖊 Кодду өзгөртүп Иштет баскычын бас</span>
+        <button class="demo-run" onclick="runDemo('demo1ed','demo1out')">▶ Иштет</button>
+      </div>
+      <textarea class="demo-editor" id="demo1ed">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    body { font-family: sans-serif; padding: 20px; background: #fff8f0; }
+    h1 { color: #8b4513; }
+    p { color: #5c3a1a; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Саламатсызбы! 👋&lt;/h1&gt;
+  &lt;p&gt;Менин аты-жөнүм: ЧЫНЫБЕКОВ НУРГАЗЫ ЧЫНЫБЕКОВИЧ&lt;/p&gt;
+  &lt;p&gt;Мен ОшМУда окуйм. HTML үйрөнүп жатам!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+      <div class="demo-output"><iframe id="demo1out"></iframe></div>
+    </div>
+ 
+    <div class="sec-title"><span class="sec-num">1.3</span> YouTube Видео Сабактар</div>
+    <div class="video-section">
+      <div class="video-label">Сунушталган видео сабактар</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('dD2EISADjNU','HTML негиздери — баштапкы деңгээл','Traversy Media · 1 саат 40 мүн')">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/dD2EISADjNU/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+            <div class="play-overlay"><div class="play-btn-big">▶</div></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">HTML Crash Course For Beginners</div>
+            <div class="video-meta">Traversy Media · 1 саат 40 мүн</div>
+          </div>
+        </div>
+        <div class="video-card" onclick="openVideo('mU6anWqZJcc','HTML Full Course - Build a Website','freeCodeCamp · 2 саат')">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/mU6anWqZJcc/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+            <div class="play-overlay"><div class="play-btn-big">▶</div></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">HTML Full Course — Build a Website</div>
+            <div class="video-meta">freeCodeCamp · 2 саат</div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="quiz-box">
+      <div class="quiz-title">📝 Билимди текшерүү</div>
+      <div class="quiz-q">HTML документинде колдонуучуга көрүнүүчү мазмун кайсы тегде жайгашат?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="qCheck(this,'a','q1a')"><span class="opt-letter">A</span>&lt;head&gt;</div>
+        <div class="quiz-opt" onclick="qCheck(this,'b','q1a')"><span class="opt-letter">B</span>&lt;body&gt;</div>
+        <div class="quiz-opt" onclick="qCheck(this,'c','q1a')"><span class="opt-letter">C</span>&lt;html&gt;</div>
+        <div class="quiz-opt" onclick="qCheck(this,'d','q1a')"><span class="opt-letter">D</span>&lt;meta&gt;</div>
+      </div>
+      <div class="quiz-result" id="qr-q1a"></div>
+    </div>
+ 
+    <div class="chap-end">
+      <div class="chap-end-icon">✅</div>
+      <h3>Глава 1 аяктады!</h3>
+      <p>HTML структурасынын негиздерин өздөштүрдүңүз.</p>
+      <button class="btn-next-chap" onclick="goTo(2,null)">Теглер жана Атрибуттарга өт →</button>
+    </div>
+  </div>
+ 
+  <!-- ======== PAGE 2 — TAGS & ATTRS ======== -->
+  <div class="page" id="p2">
+    <div class="page-num-bar"><span>HTML / Глава 02</span><span class="page-num-center">— 2 / 20 —</span><span>Теглер жана Атрибуттар</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 02 · HTML</div>
+      <div class="chap-title html">Тегдер жана Атрибуттар</div>
+      <div class="chap-sub">HTML элементтеринин бардык түрлөрү жана аларды жөндөөчү атрибуттар</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+ 
+    <p class="prose drop-cap">HTML'де жүздөгөн теги бар, бирок күнүмдүк иште 20–30 тег жетиштүү. <strong>Тег</strong> — угол жакшакайлар <code>&lt; &gt;</code> менен курчалган буйрук. <strong>Атрибут</strong> — тегге кошумча маалымат берет жана дайыма ачылуучу тегдин ичинде жазылат.</p>
+ 
+    <div class="sec-title"><span class="sec-num">2.1</span> Маанилүү теглердин толук тизмеси</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Тег</th><th>Аталышы</th><th>Мисал</th></tr>
+        <tr><td><code>&lt;h1&gt;–&lt;h6&gt;</code></td><td>Аталыштар</td><td>h1 эң чоң, h6 эң кичине</td></tr>
+        <tr><td><code>&lt;p&gt;</code></td><td>Параграф</td><td>Текст блогу</td></tr>
+        <tr><td><code>&lt;a&gt;</code></td><td>Шилтеме (link)</td><td>href атрибуту менен</td></tr>
+        <tr><td><code>&lt;img&gt;</code></td><td>Сүрөт</td><td>src жана alt керек</td></tr>
+        <tr><td><code>&lt;ul&gt; / &lt;ol&gt;</code></td><td>Тизмелер</td><td>Тегерек / Номерлүү</td></tr>
+        <tr><td><code>&lt;li&gt;</code></td><td>Тизме элементи</td><td>ul же ol ичинде</td></tr>
+        <tr><td><code>&lt;div&gt;</code></td><td>Блок контейнер</td><td>Топтоштуруу үчүн</td></tr>
+        <tr><td><code>&lt;span&gt;</code></td><td>Сызыктык контейнер</td><td>Текст ичинде</td></tr>
+        <tr><td><code>&lt;strong&gt;</code></td><td>Калың (маанилүү)</td><td>SEO мааниси бар</td></tr>
+        <tr><td><code>&lt;em&gt;</code></td><td>Курсив (баса)</td><td>Семантикалык мааниси бар</td></tr>
+        <tr><td><code>&lt;br&gt;</code></td><td>Сызык</td><td>Жаңы сапка өтүү</td></tr>
+        <tr><td><code>&lt;hr&gt;</code></td><td>Горизонталдуу сызык</td><td>Бөлүүчү</td></tr>
+        <tr><td><code>&lt;table&gt;</code></td><td>Таблица</td><td>tr, td, th менен</td></tr>
+        <tr><td><code>&lt;form&gt;</code></td><td>Форма</td><td>Маалымат жыйноо</td></tr>
+        <tr><td><code>&lt;input&gt;</code></td><td>Киргизүү талаасы</td><td>type атрибуту менен</td></tr>
+        <tr><td><code>&lt;button&gt;</code></td><td>Баскыч</td><td>onclick менен JS</td></tr>
+        <tr><td><code>&lt;video&gt;</code></td><td>Видео</td><td>controls атрибуту</td></tr>
+        <tr><td><code>&lt;audio&gt;</code></td><td>Аудио</td><td>controls атрибуту</td></tr>
+        <tr><td><code>&lt;iframe&gt;</code></td><td>Кыстырылган контент</td><td>YouTube, карта</td></tr>
+      </table>
+    </div>
+ 
+    <div class="sec-title"><span class="sec-num">2.2</span> Кеңири код мисалы</div>
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <span class="code-lang html">HTML — Теглер мисалдары</span>
+        <button class="copy-btn" onclick="copyCode(this)">Көчүр</button>
+      </div>
+      <pre class="code-pre"><span class="c">&lt;!-- Аталыштар --&gt;</span>
+<span class="t">&lt;h1&gt;</span>Биринчи деңгээл<span class="t">&lt;/h1&gt;</span>
+<span class="t">&lt;h2&gt;</span>Экинчи деңгээл<span class="t">&lt;/h2&gt;</span>
+<span class="t">&lt;h3&gt;</span>Үчүнчү деңгээл<span class="t">&lt;/h3&gt;</span>
+ 
+<span class="c">&lt;!-- Параграф жана форматтоо --&gt;</span>
+<span class="t">&lt;p&gt;</span>
+  Мен <span class="t">&lt;strong&gt;</span>HTML<span class="t">&lt;/strong&gt;</span> үйрөнүп жатам.
+  Бул <span class="t">&lt;em&gt;</span>абдан кызыктуу!<span class="t">&lt;/em&gt;</span>
+<span class="t">&lt;/p&gt;</span>
+ 
+<span class="c">&lt;!-- Шилтеме --&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="s">"https://oshsu.kg"</span>
+   <span class="a">target</span>=<span class="s">"_blank"</span>
+   <span class="a">title</span>=<span class="s">"ОшМУ сайты"</span><span class="t">&gt;</span>
+  ОшМУ официалдуу сайты
+<span class="t">&lt;/a&gt;</span>
+ 
+<span class="c">&lt;!-- Сүрөт --&gt;</span>
+<span class="t">&lt;img</span>
+  <span class="a">src</span>=<span class="s">"университет.jpg"</span>
+  <span class="a">alt</span>=<span class="s">"ОшМУ имараты"</span>
+  <span class="a">width</span>=<span class="s">"600"</span>
+  <span class="a">loading</span>=<span class="s">"lazy"</span>
+<span class="t">&gt;</span> 
+ 
+<span class="c">&lt;!-- Тизмелер --&gt;</span>
+<span class="t">&lt;ul&gt;</span>
+  <span class="t">&lt;li&gt;</span>HTML<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>CSS<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>JavaScript<span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ul&gt;</span>
+ 
+<span class="t">&lt;ol&gt;</span>
+  <span class="t">&lt;li&gt;</span>ОшМУга кир<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>МФТИТ тандап ал<span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span>Веб программалоо үйрөн<span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ol&gt;</span></pre>
+    </div>
+ 
+    <div class="sec-title"><span class="sec-num">2.3</span> YouTube Видео Сабактар</div>
+    <div class="video-section">
+      <div class="video-label">HTML Теглер боюнча видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('UB1O30fR-EE','HTML & CSS Full Course — Bro Code','Bro Code · 6 саат')">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/UB1O30fR-EE/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+            <div class="play-overlay"><div class="play-btn-big">▶</div></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">HTML & CSS Full Course — Bro Code</div>
+            <div class="video-meta">Bro Code · 6 саат</div>
+          </div>
+        </div>
+        <div class="video-card" onclick="openVideo('qz0aGYrrlhU','HTML Tutorial for Beginners','Programming with Mosh · 1 саат')">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/qz0aGYrrlhU/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+            <div class="play-overlay"><div class="play-btn-big">▶</div></div>
+          </div>
+          <div class="video-info">
+            <div class="video-title">HTML Tutorial for Beginners</div>
+            <div class="video-meta">Programming with Mosh · 1 саат</div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="quiz-box">
+      <div class="quiz-title">📝 Билимди текшерүү</div>
+      <div class="quiz-q">Номерлүү тизме жасоо үчүн кайсы тег колдонулат?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="qCheck(this,'a','q2a')"><span class="opt-letter">A</span>&lt;ul&gt;</div>
+        <div class="quiz-opt" onclick="qCheck(this,'b','q2a')"><span class="opt-letter">B</span>&lt;ol&gt;</div>
+        <div class="quiz-opt" onclick="qCheck(this,'c','q2a')"><span class="opt-letter">C</span>&lt;li&gt;</div>
+        <div class="quiz-opt" onclick="qCheck(this,'d','q2a')"><span class="opt-letter">D</span>&lt;list&gt;</div>
+      </div>
+      <div class="quiz-result" id="qr-q2a"></div>
+    </div>
+    <div class="chap-end">
+      <div class="chap-end-icon">🎉</div><h3>Глава 2 аяктады!</h3>
+      <p>Теглер жана атрибуттарды жакшы өздөштүрдүңүз!</p>
+      <button class="btn-next-chap" onclick="goTo(3,null)">Формаларга өт →</button>
+    </div>
+  </div>
+ 
+  <!-- ======== PAGE 3 — FORMS ======== -->
+  <div class="page" id="p3">
+    <div class="page-num-bar"><span>HTML / Глава 03</span><span class="page-num-center">— 3 / 20 —</span><span>Формалар жана Таблицалар</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 03 · HTML</div>
+      <div class="chap-title html">Формалар жана Таблицалар</div>
+      <div class="chap-sub">Колдонуучудан маалымат жыйноо жана таблица менен маалымат берүү</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">Форма — колдонуучудан маалымат жыйноонун негизги куралы. Кирүү беттери, издөө талаалары, байланыш формалары, каттоо беттери — баары форма элементтеринен жасалат.</p>
+ 
+    <div class="sec-title"><span class="sec-num">3.1</span> Формалардын толук мисалы</div>
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <span class="code-lang html">HTML — Катталуу формасы</span>
+        <button class="copy-btn" onclick="copyCode(this)">Көчүр</button>
+      </div>
+      <pre class="code-pre"><span class="t">&lt;form</span> <span class="a">action</span>=<span class="s">"/register"</span> <span class="a">method</span>=<span class="s">"POST"</span><span class="t">&gt;</span>
+ 
+  <span class="c">&lt;!-- Текст --&gt;</span>
+  <span class="t">&lt;label</span> <span class="a">for</span>=<span class="s">"ат"</span><span class="t">&gt;</span>Аты-жөнү:<span class="t">&lt;/label&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="s">"text"</span> <span class="a">id</span>=<span class="s">"ат"</span> <span class="a">name</span>=<span class="s">"ат"</span>
+         <span class="a">placeholder</span>=<span class="s">"Аты-жөнүңүздү жазыңыз"</span>
+         <span class="a">required</span><span class="t">&gt;</span>
+ 
+  <span class="c">&lt;!-- Email --&gt;</span>
+  <span class="t">&lt;label</span> <span class="a">for</span>=<span class="s">"email"</span><span class="t">&gt;</span>Email:<span class="t">&lt;/label&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="s">"email"</span> <span class="a">id</span>=<span class="s">"email"</span>
+         <span class="a">placeholder</span>=<span class="s">"siz@mail.com"</span><span class="t">&gt;</span>
+ 
+  <span class="c">&lt;!-- Сырсөз --&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="s">"password"</span> <span class="a">placeholder</span>=<span class="s">"Сырсөз (min 8 символ)"</span>
+         <span class="a">minlength</span>=<span class="s">"8"</span><span class="t">&gt;</span>
+ 
+  <span class="c">&lt;!-- Шаарды тандоо --&gt;</span>
+  <span class="t">&lt;select</span> <span class="a">name</span>=<span class="s">"шаар"</span><span class="t">&gt;</span>
+    <span class="t">&lt;option</span> <span class="a">value</span>=<span class="s">"ош"</span><span class="t">&gt;</span>Ош<span class="t">&lt;/option&gt;</span>
+    <span class="t">&lt;option</span> <span class="a">value</span>=<span class="s">"бишкек"</span><span class="t">&gt;</span>Бишкек<span class="t">&lt;/option&gt;</span>
+    <span class="t">&lt;option</span> <span class="a">value</span>=<span class="s">"жалал-абад"</span><span class="t">&gt;</span>Жалал-Абад<span class="t">&lt;/option&gt;</span>
+  <span class="t">&lt;/select&gt;</span>
+ 
+  <span class="c">&lt;!-- Радио баскычтар --&gt;</span>
+  <span class="t">&lt;label&gt;</span>
+    <span class="t">&lt;input</span> <span class="a">type</span>=<span class="s">"radio"</span> <span class="a">name</span>=<span class="s">"жынысы"</span> <span class="a">value</span>=<span class="s">"эркек"</span><span class="t">&gt;</span> Эркек
+  <span class="t">&lt;/label&gt;</span>
+  <span class="t">&lt;label&gt;</span>
+    <span class="t">&lt;input</span> <span class="a">type</span>=<span class="s">"radio"</span> <span class="a">name</span>=<span class="s">"жынысы"</span> <span class="a">value</span>=<span class="s">"аял"</span><span class="t">&gt;</span> Аял
+  <span class="t">&lt;/label&gt;</span>
+ 
+  <span class="c">&lt;!-- Checkbox --&gt;</span>
+  <span class="t">&lt;label&gt;</span>
+    <span class="t">&lt;input</span> <span class="a">type</span>=<span class="s">"checkbox"</span> <span class="a">name</span>=<span class="s">"макул"</span><span class="t">&gt;</span>
+    Шарттар менен макулмун
+  <span class="t">&lt;/label&gt;</span>
+ 
+  <span class="c">&lt;!-- Баскыч --&gt;</span>
+  <span class="t">&lt;button</span> <span class="a">type</span>=<span class="s">"submit"</span><span class="t">&gt;</span>Катталуу<span class="t">&lt;/button&gt;</span>
+ 
+<span class="t">&lt;/form&gt;</span></pre>
+    </div>
+ 
+    <div class="table-wrap">
+      <table>
+        <tr><th>input type</th><th>Сүрөттөмө</th></tr>
+        <tr><td><code>text</code></td><td>Жалпы текст киргизүү</td></tr>
+        <tr><td><code>email</code></td><td>Email формат текшерилет</td></tr>
+        <tr><td><code>password</code></td><td>Жашыруун символдор</td></tr>
+        <tr><td><code>number</code></td><td>Сан гана</td></tr>
+        <tr><td><code>checkbox</code></td><td>Белгилөө кутучасы</td></tr>
+        <tr><td><code>radio</code></td><td>Бир гана тандоо</td></tr>
+        <tr><td><code>file</code></td><td>Файл жүктөө</td></tr>
+        <tr><td><code>date</code></td><td>Күн тандоо</td></tr>
+        <tr><td><code>range</code></td><td>Сыдырма (slider)</td></tr>
+        <tr><td><code>color</code></td><td>Түс тандоо</td></tr>
+        <tr><td><code>search</code></td><td>Издөө талаасы</td></tr>
+        <tr><td><code>tel</code></td><td>Телефон номер</td></tr>
+        <tr><td><code>url</code></td><td>Веб-дарек</td></tr>
+      </table>
+    </div>
+ 
+    <div class="video-section">
+      <div class="video-label">HTML Формалар боюнча видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('fNcJuPIZ2BE','HTML Forms & Validation','Web Dev Simplified · 20 мүн')">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/fNcJuPIZ2BE/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+            <div class="play-overlay"><div class="play-btn-big">▶</div></div>
+          </div>
+          <div class="video-info"><div class="video-title">HTML Forms & Validation — Full Tutorial</div><div class="video-meta">Web Dev Simplified · 20 мүн</div></div>
+        </div>
+        <div class="video-card" onclick="openVideo('YwbIeMCEoes','HTML Tables Crash Course','Traversy Media · 30 мүн')">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/YwbIeMCEoes/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+            <div class="play-overlay"><div class="play-btn-big">▶</div></div>
+          </div>
+          <div class="video-info"><div class="video-title">HTML Tables — Crash Course</div><div class="video-meta">Traversy Media · 30 мүн</div></div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="chap-end"><div class="chap-end-icon">✅</div><h3>Глава 3 аяктады!</h3><p>Формалар жана таблицаларды өздөштүрдүңүз!</p><button class="btn-next-chap" onclick="goTo(4,null)">Семантикалык HTMLга өт →</button></div>
+  </div>
+ 
+  <!-- ======== PAGE 4 — SEMANTIC ======== -->
+  <div class="page" id="p4">
+    <div class="page-num-bar"><span>HTML / Глава 04</span><span class="page-num-center">— 4 / 20 —</span><span>Семантикалык HTML</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 04 · HTML</div>
+      <div class="chap-title html">Семантикалык HTML</div>
+      <div class="chap-sub">HTML5дун семантикалык теглери — SEO жана жеткиликтүүлүк</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">HTML5 баракчанын бөлүктөрүн так маани берген <strong>семантикалык теглер</strong> киргизди. Алар браузерге, издөө системаларына (Google) жана экран окугуч программаларга баракчанын структурасын жакшыраак түшүнүүгө жардам берет.</p>
+ 
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang html">HTML5 — Семантикалык Структура</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="t">&lt;body&gt;</span>
+ 
+  <span class="c">&lt;!-- Жогорку бөлүм --&gt;</span>
+  <span class="t">&lt;header&gt;</span>
+    <span class="t">&lt;h1&gt;</span>ОшМУ — Расмий Сайт<span class="t">&lt;/h1&gt;</span>
+    <span class="t">&lt;nav&gt;</span>
+      <span class="t">&lt;ul&gt;</span>
+        <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="s">"#башкы"</span><span class="t">&gt;</span>Башкы<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="s">"#жөнүндө"</span><span class="t">&gt;</span>Жөнүндө<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="s">"#байланыш"</span><span class="t">&gt;</span>Байланыш<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="t">&lt;/ul&gt;</span>
+    <span class="t">&lt;/nav&gt;</span>
+  <span class="t">&lt;/header&gt;</span>
+ 
+  <span class="c">&lt;!-- Башкы мазмун --&gt;</span>
+  <span class="t">&lt;main&gt;</span>
+    <span class="t">&lt;section</span> <span class="a">id</span>=<span class="s">"башкы"</span><span class="t">&gt;</span>
+      <span class="t">&lt;h2&gt;</span>Биздин Университет<span class="t">&lt;/h2&gt;</span>
+      <span class="t">&lt;article&gt;</span>
+        <span class="t">&lt;h3&gt;</span>МФТИТ институту<span class="t">&lt;/h3&gt;</span>
+        <span class="t">&lt;p&gt;</span>Программалоо жана математика...<span class="t">&lt;/p&gt;</span>
+      <span class="t">&lt;/article&gt;</span>
+    <span class="t">&lt;/section&gt;</span>
+ 
+    <span class="c">&lt;!-- Каптал бар --&gt;</span>
+    <span class="t">&lt;aside&gt;</span>
+      <span class="t">&lt;h4&gt;</span>Байланыш маалымат<span class="t">&lt;/h4&gt;</span>
+      <span class="t">&lt;address&gt;</span>Ош шаары, ...<span class="t">&lt;/address&gt;</span>
+    <span class="t">&lt;/aside&gt;</span>
+  <span class="t">&lt;/main&gt;</span>
+ 
+  <span class="c">&lt;!-- Аяк бөлүм --&gt;</span>
+  <span class="t">&lt;footer&gt;</span>
+    <span class="t">&lt;p&gt;</span>&amp;copy; 2026 ОшМУ. Бардык укуктар корголгон.<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;/footer&gt;</span>
+ 
+<span class="t">&lt;/body&gt;</span></pre>
+    </div>
+ 
+    <div class="video-section">
+      <div class="video-label">Семантикалык HTML боюнча видео</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('kGW8Al_cga4','Semantic HTML in 10 Minutes','Web Dev Simplified · 10 мүн')">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/kGW8Al_cga4/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div>
+          <div class="video-info"><div class="video-title">Semantic HTML in 10 Minutes</div><div class="video-meta">Web Dev Simplified · 10 мүн</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">🏆</div><h3>HTML бөлүмү аяктады!</h3><p>Эми CSS — дизайн дүйнөсүнө кадам таштайбыз!</p><button class="btn-next-chap" onclick="goTo(5,null)">CSS башталсын →</button></div>
+  </div>
+ 
+  <!-- ======== PAGE 5 — CSS BASICS ======== -->
+  <div class="page" id="p5">
+    <div class="page-num-bar"><span>CSS / Глава 05</span><span class="page-num-center">— 5 / 20 —</span><span>CSS Негиздери</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 05 · CSS</div>
+      <div class="chap-title css">CSS Негиздери</div>
+      <div class="chap-sub">Cascading Style Sheets — кооз дизайндын тили</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">CSS — <strong>Cascading Style Sheets</strong>, баскычтама стиль барактары. HTML мазмундун структурасын берсе, CSS аны визуалдык жактан кооздойт: түстөр, шрифттер, өлчөмдөр, жайгашуулар жана анимациялар.</p>
+ 
+    <div class="sec-title"><span class="sec-num">5.1</span> CSS Синтаксиси</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — style.css</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">/* Базалык CSS структурасы */</span>
+<span class="c">/* СЕЛЕКТОР { КАСИЕТ: МААНИ; } */</span>
+ 
+<span class="c">/* 1. Элемент селектору */</span>
+<span class="p">body</span> {
+  <span class="a">font-family</span>: <span class="s">Georgia, 'Times New Roman', serif</span>;
+  <span class="a">background-color</span>: <span class="s">#fdf6ed</span>;
+  <span class="a">color</span>: <span class="s">#2d1a06</span>;
+  <span class="a">margin</span>: <span class="n">0</span>;
+  <span class="a">padding</span>: <span class="n">0</span>;
+}
+ 
+<span class="p">h1</span> {
+  <span class="a">font-size</span>: <span class="n">48px</span>;
+  <span class="a">font-weight</span>: <span class="v">bold</span>;
+  <span class="a">color</span>: <span class="s">#3d1f0a</span>;
+  <span class="a">text-align</span>: <span class="v">center</span>;
+  <span class="a">margin-bottom</span>: <span class="n">24px</span>;
+}
+ 
+<span class="c">/* 2. Класс селектору — . менен */</span>
+<span class="p">.баскыч</span> {
+  <span class="a">background</span>: <span class="s">#c8922a</span>;
+  <span class="a">color</span>: <span class="v">white</span>;
+  <span class="a">padding</span>: <span class="n">12px 28px</span>;
+  <span class="a">border</span>: <span class="v">none</span>;
+  <span class="a">border-radius</span>: <span class="n">6px</span>;
+  <span class="a">cursor</span>: <span class="v">pointer</span>;
+  <span class="a">font-size</span>: <span class="n">16px</span>;
+  <span class="a">transition</span>: <span class="v">all</span> <span class="n">0.3s</span> <span class="v">ease</span>;
+}
+ 
+<span class="p">.баскыч:hover</span> {
+  <span class="a">background</span>: <span class="s">#8b4513</span>;
+  <span class="a">transform</span>: <span class="v">translateY</span>(<span class="n">-2px</span>);
+}
+ 
+<span class="c">/* 3. ID селектору — # менен */</span>
+<span class="p">#башкы-меню</span> {
+  <span class="a">position</span>: <span class="v">fixed</span>;
+  <span class="a">top</span>: <span class="n">0</span>;
+  <span class="a">width</span>: <span class="n">100%</span>;
+  <span class="a">background</span>: <span class="s">#3d1f0a</span>;
+  <span class="a">z-index</span>: <span class="n">1000</span>;
+}
+ 
+<span class="c">/* 4. Мурастык (Descendant) */</span>
+<span class="p">.карточка p</span> {
+  <span class="a">font-size</span>: <span class="n">14px</span>;
+  <span class="a">color</span>: <span class="s">#5c3a1a</span>;
+}
+ 
+<span class="c">/* 5. CSS Variables (Касиет өзгөрмөлөрү) */</span>
+<span class="p">:root</span> {
+  <span class="a">--негизги-түс</span>: <span class="s">#c8922a</span>;
+  <span class="a">--текст-түс</span>: <span class="s">#2d1a06</span>;
+}
+ 
+<span class="p">.баскыч</span> {
+  <span class="a">background</span>: <span class="v">var</span>(<span class="a">--негизги-түс</span>);
+}</pre>
+    </div>
+ 
+    <div class="sec-title"><span class="sec-num">5.2</span> Жандуу CSS мисалы</div>
+    <div class="demo-box">
+      <div class="demo-head">
+        <span class="demo-label">🎨 CSS мисалы — иштетип көр</span>
+        <button class="demo-run" onclick="runDemo('demo5ed','demo5out')">▶ Иштет</button>
+      </div>
+      <textarea class="demo-editor" id="demo5ed">&lt;style&gt;
+  .карточка {
+    background: #fff8f0;
+    border: 2px solid #c8922a;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .карточка:hover { transform: translateY(-6px); }
+  .карточка h2 { color: #3d1f0a; margin-bottom: 8px; }
+  .карточка p  { color: #8b4513; font-size: 14px; }
+  .тег {
+    display: inline-block;
+    background: #c8922a;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+&lt;/style&gt;
+&lt;div class="карточка"&gt;
+  &lt;h2&gt;👩‍🎓 ЧЫНЫБЕКОВ НУРГАЗЫ ЧЫНЫБЕКОВИЧ&lt;/h2&gt;
+  &lt;p&gt;ОшМУ · МФТИТ · 4-курс&lt;/p&gt;
+  &lt;span class="тег"&gt;Веб программалоо&lt;/span&gt;
+&lt;/div&gt;</textarea>
+      <div class="demo-output"><iframe id="demo5out"></iframe></div>
+    </div>
+ 
+    <div class="video-section">
+      <div class="video-label">CSS Негиздери боюнча видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('yfoY53QXEnI','CSS Crash Course','Traversy Media · 1 саат 25 мүн')">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/yfoY53QXEnI/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div>
+          <div class="video-info"><div class="video-title">CSS Crash Course For Absolute Beginners</div><div class="video-meta">Traversy Media · 1 саат 25 мүн</div></div>
+        </div>
+        <div class="video-card" onclick="openVideo('wRNinF7YQqQ','CSS Full Course','freeCodeCamp · 11 саат')">
+          <div class="video-thumb"><img src="https://img.youtube.com/vi/wRNinF7YQqQ/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div>
+          <div class="video-info"><div class="video-title">CSS Full Course — freeCodeCamp</div><div class="video-meta">freeCodeCamp · 11 саат</div></div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="quiz-box">
+      <div class="quiz-title">📝 Билимди текшерүү</div>
+      <div class="quiz-q">CSS'де класс селекторун кандай символ менен жазабыз?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="qCheck(this,'a','q5a')"><span class="opt-letter">A</span># (диез)</div>
+        <div class="quiz-opt" onclick="qCheck(this,'b','q5a')"><span class="opt-letter">B</span>. (чекит)</div>
+        <div class="quiz-opt" onclick="qCheck(this,'c','q5a')"><span class="opt-letter">C</span>@ (at)</div>
+        <div class="quiz-opt" onclick="qCheck(this,'d','q5a')"><span class="opt-letter">D</span>$ (доллар)</div>
+      </div>
+      <div class="quiz-result" id="qr-q5a"></div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">✨</div><h3>Глава 5 аяктады!</h3><p>CSS негиздерин өздөштүрдүңүз!</p><button class="btn-next-chap" onclick="goTo(6,null)">Сайлагычтарга өт →</button></div>
+  </div>
+ 
+  <!-- ======== PAGES 6,7,8 — CSS ======== -->
+  <div class="page" id="p6">
+    <div class="page-num-bar"><span>CSS / Глава 06</span><span class="page-num-center">— 6 / 20 —</span><span>Сайлагычтар жана касиеттер</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 06 · CSS</div><div class="chap-title css">Сайлагычтар жана Касиеттер</div><div class="chap-sub">CSS сайлагычтарынын бардык түрлөрү жана колдонулган касиеттердин толук каталогу</div></div>
+    <div class="ornament">— ✦ —</div>
+    <div class="sec-title"><span class="sec-num">6.1</span> Сайлагычтардын түрлөрү</div>
+    <div class="table-wrap"><table>
+      <tr><th>Сайлагыч</th><th>Мисал</th><th>Максаты</th></tr>
+      <tr><td>Элемент</td><td><code>p { }</code></td><td>Бардык &lt;p&gt; теглери</td></tr>
+      <tr><td>Класс</td><td><code>.баскыч { }</code></td><td>class="баскыч" болгондор</td></tr>
+      <tr><td>ID</td><td><code>#башкы { }</code></td><td>id="башкы" болгон бир элемент</td></tr>
+      <tr><td>Бардыгы</td><td><code>* { }</code></td><td>Баардык элементтер</td></tr>
+      <tr><td>Балдар</td><td><code>ul li { }</code></td><td>ul ичиндеги li</td></tr>
+      <tr><td>Түздөн-түз бала</td><td><code>ul > li { }</code></td><td>Түздөн-түз ul&gt;li гана</td></tr>
+      <tr><td>Кошуна</td><td><code>h1 + p { }</code></td><td>h1 дан кийинки p</td></tr>
+      <tr><td>Атрибут</td><td><code>[type="text"] { }</code></td><td>type="text" болгондор</td></tr>
+      <tr><td>:hover</td><td><code>a:hover { }</code></td><td>Чычкан үстүндө</td></tr>
+      <tr><td>:focus</td><td><code>input:focus { }</code></td><td>Фокуста болгондо</td></tr>
+      <tr><td>:first-child</td><td><code>li:first-child { }</code></td><td>Биринчи бала элемент</td></tr>
+      <tr><td>::before</td><td><code>p::before { }</code></td><td>Элементтин алдына контент</td></tr>
+      <tr><td>::after</td><td><code>p::after { }</code></td><td>Элементтин артына контент</td></tr>
+    </table></div>
+    <div class="video-section"><div class="video-label">CSS Сайлагычтар видео</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('l1mER1bV0N0','CSS Selectors Crash Course','Web Dev Simplified · 18 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/l1mER1bV0N0/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">CSS Selectors Crash Course</div><div class="video-meta">Web Dev Simplified · 18 мүн</div></div></div>
+      </div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">✅</div><h3>Глава 6 аяктады!</h3><button class="btn-next-chap" onclick="goTo(7,null)">Flexbox жана Gridге өт →</button></div>
+  </div>
+ 
+  <div class="page" id="p7">
+    <div class="page-num-bar"><span>CSS / Глава 07</span><span class="page-num-center">— 7 / 20 —</span><span>Flexbox жана Grid</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 07 · CSS</div><div class="chap-title css">Flexbox жана Grid</div><div class="chap-sub">Заманбап веб-layoutтун эки мощный куралы</div></div>
+    <div class="ornament">— ✦ —</div>
+    <div class="sec-title"><span class="sec-num">7.1</span> Flexbox</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — Flexbox</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="p">.контейнер</span> {
+  <span class="a">display</span>: <span class="v">flex</span>;
+ 
+  <span class="c">/* Горизонталдуу тегиздөө */</span>
+  <span class="a">justify-content</span>: <span class="v">center</span>;
+  <span class="c">/* flex-start | flex-end | center | space-between | space-around | space-evenly */</span>
+ 
+  <span class="c">/* Вертикалдуу тегиздөө */</span>
+  <span class="a">align-items</span>: <span class="v">center</span>;
+  <span class="c">/* flex-start | flex-end | center | stretch | baseline */</span>
+ 
+  <span class="c">/* Багыт */</span>
+  <span class="a">flex-direction</span>: <span class="v">row</span>;
+  <span class="c">/* row | row-reverse | column | column-reverse */</span>
+ 
+  <span class="a">flex-wrap</span>: <span class="v">wrap</span>;
+  <span class="a">gap</span>: <span class="n">16px</span>;
+}
+ 
+<span class="p">.бала</span> {
+  <span class="a">flex</span>: <span class="n">1</span>;        <span class="c">/* Калган орунду бөлүп ал */</span>
+  <span class="a">flex</span>: <span class="n">0 0 200px</span>; <span class="c">/* Фиксирленген туурасы */</span>
+  <span class="a">order</span>: <span class="n">2</span>;        <span class="c">/* Орунду өзгөрт */</span>
+}</pre></div>
+ 
+    <div class="sec-title"><span class="sec-num">7.2</span> CSS Grid</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — Grid</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="p">.сетка</span> {
+  <span class="a">display</span>: <span class="v">grid</span>;
+ 
+  <span class="c">/* 3 тилке, бирдей туурасы */</span>
+  <span class="a">grid-template-columns</span>: <span class="v">repeat</span>(<span class="n">3</span>, <span class="n">1fr</span>);
+ 
+  <span class="c">/* Жооптуу тилкелер */</span>
+  <span class="a">grid-template-columns</span>: <span class="v">repeat</span>(<span class="v">auto-fit</span>, <span class="v">minmax</span>(<span class="n">250px</span>, <span class="n">1fr</span>));
+ 
+  <span class="c">/* Катарлар */</span>
+  <span class="a">grid-template-rows</span>: <span class="n">100px</span> <span class="v">auto</span> <span class="n">80px</span>;
+ 
+  <span class="a">gap</span>: <span class="n">24px</span>;
+}
+ 
+<span class="c">/* Аймактар аркылуу */</span>
+<span class="p">.орун</span> {
+  <span class="a">grid-template-areas</span>:
+    <span class="s">"баш   баш   баш"</span>
+    <span class="s">"ченеп мазм  каптал"</span>
+    <span class="s">"аяк   аяк   аяк"</span>;
+}
+ 
+<span class="p">.баш-бөлүм</span>  { <span class="a">grid-area</span>: <span class="v">баш</span>; }
+<span class="p">.мазмун</span>     { <span class="a">grid-area</span>: <span class="v">мазм</span>; }
+<span class="p">.аяк-бөлүм</span>  { <span class="a">grid-area</span>: <span class="v">аяк</span>; }</pre></div>
+ 
+    <div class="video-section"><div class="video-label">Flexbox жана Grid видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('phWxA89Dy94','Flexbox in 15 Minutes','Web Dev Simplified · 15 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/phWxA89Dy94/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Flexbox in 15 Minutes</div><div class="video-meta">Web Dev Simplified · 15 мүн</div></div></div>
+        <div class="video-card" onclick="openVideo('9zBsdzdE2iY','CSS Grid Crash Course','Traversy Media · 28 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/9zBsdzdE2iY/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">CSS Grid Crash Course</div><div class="video-meta">Traversy Media · 28 мүн</div></div></div>
+      </div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">🎨</div><h3>Глава 7 аяктады!</h3><button class="btn-next-chap" onclick="goTo(8,null)">Анимацияларга өт →</button></div>
+  </div>
+ 
+  <div class="page" id="p8">
+    <div class="page-num-bar"><span>CSS / Глава 08</span><span class="page-num-center">— 8 / 20 —</span><span>Анимациялар</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 08 · CSS</div><div class="chap-title css">Анимациялар & Media Query</div><div class="chap-sub">Жандуу интерфейс жана жооптуу дизайн</div></div>
+    <div class="ornament">— ✦ —</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — Анимация жана Media Query</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="c">/* TRANSITION */</span>
+<span class="p">.баскыч</span> {
+  <span class="a">transition</span>: <span class="v">all</span> <span class="n">0.3s</span> <span class="v">ease</span>;
+}
+<span class="p">.баскыч:hover</span> {
+  <span class="a">transform</span>: <span class="v">scale</span>(<span class="n">1.05</span>);
+  <span class="a">box-shadow</span>: <span class="n">0 8px 24px</span> <span class="v">rgba</span>(<span class="n">0,0,0,0.2</span>);
+}
+ 
+<span class="c">/* KEYFRAMES АНИМАЦИЯ */</span>
+<span class="k">@keyframes</span> <span class="f">пайда-болуу</span> {
+  <span class="k">from</span> {
+    <span class="a">opacity</span>: <span class="n">0</span>;
+    <span class="a">transform</span>: <span class="v">translateY</span>(<span class="n">30px</span>);
+  }
+  <span class="k">to</span> {
+    <span class="a">opacity</span>: <span class="n">1</span>;
+    <span class="a">transform</span>: <span class="v">translateY</span>(<span class="n">0</span>);
+  }
+}
+ 
+<span class="p">.карточка</span> {
+  <span class="a">animation</span>: <span class="f">пайда-болуу</span> <span class="n">0.6s</span> <span class="v">ease forwards</span>;
+  <span class="a">animation-delay</span>: <span class="n">0.2s</span>;
+}
+ 
+<span class="c">/* MEDIA QUERY — Жооптуу дизайн */</span>
+<span class="c">/* Телефондор */</span>
+<span class="k">@media</span> (<span class="a">max-width</span>: <span class="n">600px</span>) {
+  <span class="p">.контейнер</span> {
+    <span class="a">flex-direction</span>: <span class="v">column</span>;
+    <span class="a">padding</span>: <span class="n">16px</span>;
+  }
+  <span class="p">h1</span> { <span class="a">font-size</span>: <span class="n">28px</span>; }
+}
+ 
+<span class="c">/* Планшеттер */</span>
+<span class="k">@media</span> (<span class="a">max-width</span>: <span class="n">900px</span>) {
+  <span class="p">.сетка</span> {
+    <span class="a">grid-template-columns</span>: <span class="v">repeat</span>(<span class="n">2</span>, <span class="n">1fr</span>);
+  }
+}
+ 
+<span class="c">/* Принтер стили */</span>
+<span class="k">@media</span> <span class="v">print</span> {
+  <span class="p">.навигация, .рекламалар</span> { <span class="a">display</span>: <span class="v">none</span>; }
+}</pre></div>
+    <div class="video-section"><div class="video-label">CSS Анимация жана RWD видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('YszOvzns11I','CSS Animation Tutorial','Web Dev Simplified · 16 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/YszOvzns11I/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">CSS Animation Tutorial</div><div class="video-meta">Web Dev Simplified · 16 мүн</div></div></div>
+        <div class="video-card" onclick="openVideo('srvUrASNj0s','Media Queries Explained','Kevin Powell · 24 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/srvUrASNj0s/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Media Queries Explained</div><div class="video-meta">Kevin Powell · 24 мүн</div></div></div>
+      </div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">🚀</div><h3>CSS бөлүмү аяктады!</h3><p>JavaScript дүйнөсүнө кирели!</p><button class="btn-next-chap" onclick="goTo(9,null)">JavaScript башталсын →</button></div>
+  </div>
+ 
+  <!-- ======== PAGE 9 — JS BASICS ======== -->
+  <div class="page" id="p9">
+    <div class="page-num-bar"><span>JS / Глава 09</span><span class="page-num-center">— 9 / 20 —</span><span>JS Негиздери</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 09 · JavaScript</div><div class="chap-title js">JS Негиздери</div><div class="chap-sub">Өзгөрмөлөр, типтер, операторлор, шарттар жана циклдер</div></div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">JavaScript — веб-баракчаны интерактивдүү жана жандуу кылган программалоо тили. Баскычтарды бассаңыз, тизмелер ачылса, форма текшерилсе, маалымат жүктөлсө — баары JavaScript аркылуу болот.</p>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Негиздер</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="c">// ===== ӨЗГӨРМӨЛӨР =====</span>
+<span class="k">let</span>   <span class="v">аты</span>    = <span class="s">"Айгүл"</span>;        <span class="c">// өзгөрүүчү</span>
+<span class="k">const</span> <span class="v">ПИ</span>     = <span class="n">3.14159</span>;        <span class="c">// туруктуу</span>
+<span class="k">var</span>   <span class="v">эски</span>   = <span class="s">"эскирген жол"</span>; <span class="c">// эски, колдонбо</span>
+ 
+<span class="c">// ===== МААЛЫМАТ ТИПТЕРИ =====</span>
+<span class="k">let</span> <span class="v">сан</span>       = <span class="n">42</span>;             <span class="c">// Number</span>
+<span class="k">let</span> <span class="v">текст</span>     = <span class="s">"Салам!"</span>;       <span class="c">// String</span>
+<span class="k">let</span> <span class="v">логика</span>    = <span class="k">true</span>;           <span class="c">// Boolean</span>
+<span class="k">let</span> <span class="v">тизме</span>     = [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>];      <span class="c">// Array</span>
+<span class="k">let</span> <span class="v">объект</span>    = {<span class="p">ат</span>: <span class="s">"Асан"</span>};   <span class="c">// Object</span>
+<span class="k">let</span> <span class="v">бош</span>       = <span class="k">null</span>;           <span class="c">// Null</span>
+<span class="k">let</span> <span class="v">жарыяланбаган</span> = <span class="k">undefined</span>; <span class="c">// Undefined</span>
+ 
+<span class="c">// ===== ОПЕРАТОРЛОР =====</span>
+<span class="k">let</span> <span class="v">а</span> = <span class="n">10</span>, <span class="v">б</span> = <span class="n">3</span>;
+<span class="f">console</span>.<span class="f">log</span>(<span class="v">а</span> + <span class="v">б</span>);   <span class="c">// 13 — кошуу</span>
+<span class="f">console</span>.<span class="f">log</span>(<span class="v">а</span> - <span class="v">б</span>);   <span class="c">// 7  — кемитүү</span>
+<span class="f">console</span>.<span class="f">log</span>(<span class="v">а</span> * <span class="v">б</span>);   <span class="c">// 30 — көбөйтүү</span>
+<span class="f">console</span>.<span class="f">log</span>(<span class="v">а</span> / <span class="v">б</span>);   <span class="c">// 3.33 — бөлүү</span>
+<span class="f">console</span>.<span class="f">log</span>(<span class="v">а</span> % <span class="v">б</span>);   <span class="c">// 1  — калдык</span>
+<span class="f">console</span>.<span class="f">log</span>(<span class="v">а</span> ** <span class="v">б</span>);  <span class="c">// 1000 — даража</span>
+ 
+<span class="c">// ===== ШАРТТАР =====</span>
+<span class="k">let</span> <span class="v">упай</span> = <span class="n">75</span>;
+ 
+<span class="k">if</span> (<span class="v">упай</span> >= <span class="n">90</span>) {
+  <span class="f">console</span>.<span class="f">log</span>(<span class="s">"A — Мыкты!"</span>);
+} <span class="k">else if</span> (<span class="v">упай</span> >= <span class="n">75</span>) {
+  <span class="f">console</span>.<span class="f">log</span>(<span class="s">"B — Жакшы"</span>);
+} <span class="k">else if</span> (<span class="v">упай</span> >= <span class="n">60</span>) {
+  <span class="f">console</span>.<span class="f">log</span>(<span class="s">"C — Орточо"</span>);
+} <span class="k">else</span> {
+  <span class="f">console</span>.<span class="f">log</span>(<span class="s">"F — Аракет кыл!"</span>);
+}
+ 
+<span class="c">// Тернарлык оператор</span>
+<span class="k">let</span> <span class="v">натыйжа</span> = <span class="v">упай</span> >= <span class="n">60</span> ? <span class="s">"Өттү ✅"</span> : <span class="s">"Өтпөдү ❌"</span>;
+ 
+<span class="c">// Switch</span>
+<span class="k">switch</span> (<span class="v">аты</span>) {
+  <span class="k">case</span> <span class="s">"Айгүл"</span>: <span class="f">console</span>.<span class="f">log</span>(<span class="s">"Кыз!"</span>); <span class="k">break</span>;
+  <span class="k">case</span> <span class="s">"Асан"</span>:  <span class="f">console</span>.<span class="f">log</span>(<span class="s">"Жигит!"</span>); <span class="k">break</span>;
+  <span class="k">default</span>:    <span class="f">console</span>.<span class="f">log</span>(<span class="s">"Белгисиз"</span>);
+}
+ 
+<span class="c">// ===== ЦИКЛДЕР =====</span>
+<span class="k">for</span> (<span class="k">let</span> <span class="v">i</span> = <span class="n">0</span>; <span class="v">i</span> < <span class="n">5</span>; <span class="v">i</span>++) {
+  <span class="f">console</span>.<span class="f">log</span>(<span class="s">`${<span class="v">i</span> + 1} — кадам`</span>);
+}
+ 
+<span class="k">const</span> <span class="v">жемиштер</span> = [<span class="s">"алма"</span>, <span class="s">"банан"</span>, <span class="s">"өрүк"</span>, <span class="s">"жүзүм"</span>];
+<span class="v">жемиштер</span>.<span class="f">forEach</span>((<span class="v">жемиш</span>, <span class="v">индекс</span>) => {
+  <span class="f">console</span>.<span class="f">log</span>(<span class="s">`${<span class="v">индекс</span> + 1}. ${<span class="v">жемиш</span>}`</span>);
+});</pre></div>
+ 
+    <div class="video-section"><div class="video-label">JavaScript Негиздери боюнча видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('hdI2bqOjy3c','JavaScript Crash Course','Traversy Media · 1 саат 40 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/hdI2bqOjy3c/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">JavaScript Crash Course for Beginners</div><div class="video-meta">Traversy Media · 1 саат 40 мүн</div></div></div>
+        <div class="video-card" onclick="openVideo('PkZNo7MFNFg','Learn JavaScript - Full Course','freeCodeCamp · 3 саат')"><div class="video-thumb"><img src="https://img.youtube.com/vi/PkZNo7MFNFg/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Learn JavaScript — Full Course for Beginners</div><div class="video-meta">freeCodeCamp · 3 саат</div></div></div>
+      </div>
+    </div>
+ 
+    <div class="quiz-box">
+      <div class="quiz-title">📝 Билимди текшерүү</div>
+      <div class="quiz-q">JavaScript'те өзгөрбөс (туруктуу) өзгөрмө жарыялоо үчүн кайсы ачкыч сөз колдонулат?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="qCheck(this,'a','q9a')"><span class="opt-letter">A</span>var</div>
+        <div class="quiz-opt" onclick="qCheck(this,'b','q9a')"><span class="opt-letter">B</span>let</div>
+        <div class="quiz-opt" onclick="qCheck(this,'c','q9a')"><span class="opt-letter">C</span>const</div>
+        <div class="quiz-opt" onclick="qCheck(this,'d','q9a')"><span class="opt-letter">D</span>static</div>
+      </div>
+      <div class="quiz-result" id="qr-q9a"></div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">⚡</div><h3>Глава 9 аяктады!</h3><button class="btn-next-chap" onclick="goTo(10,null)">Функцияларга өт →</button></div>
+  </div>
+ 
+  <!-- ======== PAGE 10 — FUNCTIONS ======== -->
+  <div class="page" id="p10">
+    <div class="page-num-bar"><span>JS / Глава 10</span><span class="page-num-center">— 10 / 20 —</span><span>Функциялар жана Массивтер</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 10 · JavaScript</div><div class="chap-title js">Функциялар жана Массивтер</div><div class="chap-sub">Кайра колдонулуучу код жана маалымат топтому менен иштөө</div></div>
+    <div class="ornament">— ✦ —</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Функциялар жана Массивтер</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="c">// ===== ФУНКЦИЯЛАР =====</span>
+ 
+<span class="c">// 1. Классикалык функция</span>
+<span class="k">function</span> <span class="f">саламат</span>(<span class="v">ат</span>) {
+  <span class="k">return</span> <span class="s">`Саламатсызбы, ${<span class="v">ат</span>}!`</span>;
+}
+<span class="f">console</span>.<span class="f">log</span>(<span class="f">саламат</span>(<span class="s">"Айгүл"</span>)); <span class="c">// "Саламатсызбы, Айгүл!"</span>
+ 
+<span class="c">// 2. Arrow функция (заманбап)</span>
+<span class="k">const</span> <span class="f">кошуу</span> = (<span class="v">а</span>, <span class="v">б</span>) => <span class="v">а</span> + <span class="v">б</span>;
+<span class="f">console</span>.<span class="f">log</span>(<span class="f">кошуу</span>(<span class="n">5</span>, <span class="n">3</span>)); <span class="c">// 8</span>
+ 
+<span class="c">// 3. Демейки параметр</span>
+<span class="k">const</span> <span class="f">даректе</span> = (<span class="v">шаар</span> = <span class="s">"Ош"</span>) =>
+  <span class="s">`Мен ${<span class="v">шаар</span>}до жашайм`</span>;
+ 
+<span class="c">// 4. Жабылыш (Closure)</span>
+<span class="k">function</span> <span class="f">эсептегич</span>() {
+  <span class="k">let</span> <span class="v">эсеп</span> = <span class="n">0</span>;
+  <span class="k">return</span> <span class="k">function</span>() {
+    <span class="v">эсеп</span>++;
+    <span class="k">return</span> <span class="v">эсеп</span>;
+  };
+}
+<span class="k">const</span> <span class="v">сана</span> = <span class="f">эсептегич</span>();
+<span class="f">console</span>.<span class="f">log</span>(<span class="f">сана</span>()); <span class="c">// 1</span>
+<span class="f">console</span>.<span class="f">log</span>(<span class="f">сана</span>()); <span class="c">// 2</span>
+ 
+<span class="c">// ===== МАССИВДЕР =====</span>
+<span class="k">const</span> <span class="v">студенттер</span> = [<span class="s">"Айгүл"</span>, <span class="s">"Асан"</span>, <span class="s">"Бекзат"</span>];
+ 
+<span class="c">// Кошуу / Алуу</span>
+<span class="v">студенттер</span>.<span class="f">push</span>(<span class="s">"Гүлзат"</span>);    <span class="c">// аягына кошуу</span>
+<span class="v">студенттер</span>.<span class="f">unshift</span>(<span class="s">"Зарина"</span>); <span class="c">// башына кошуу</span>
+<span class="v">студенттер</span>.<span class="f">pop</span>();             <span class="c">// аягынан алуу</span>
+<span class="v">студенттер</span>.<span class="f">shift</span>();           <span class="c">// башынан алуу</span>
+ 
+<span class="c">// Издөө</span>
+<span class="v">студенттер</span>.<span class="f">includes</span>(<span class="s">"Асан"</span>);  <span class="c">// true</span>
+<span class="v">студенттер</span>.<span class="f">indexOf</span>(<span class="s">"Асан"</span>);  <span class="c">// 1</span>
+<span class="v">студенттер</span>.<span class="f">find</span>(<span class="v">с</span> => <span class="v">с</span>.<span class="f">startsWith</span>(<span class="s">"А"</span>)); <span class="c">// "Айгүл"</span>
+ 
+<span class="c">// Трансформация</span>
+<span class="k">const</span> <span class="v">узундуктары</span> = <span class="v">студенттер</span>.<span class="f">map</span>(<span class="v">с</span> => <span class="v">с</span>.<span class="p">length</span>);
+<span class="k">const</span> <span class="v">А_менен</span> = <span class="v">студенттер</span>.<span class="f">filter</span>(<span class="v">с</span> => <span class="v">с</span>.<span class="f">startsWith</span>(<span class="s">"А"</span>));
+<span class="k">const</span> <span class="v">бардыгы</span> = <span class="v">студенттер</span>.<span class="f">join</span>(<span class="s">", "</span>);
+<span class="k">const</span> <span class="v">иреттелген</span> = [...<span class="v">студенттер</span>].<span class="f">sort</span>();</pre></div>
+ 
+    <div class="video-section"><div class="video-label">Функциялар жана Массивтер видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('xUI5Tsl2JpY','JavaScript Functions Explained','Traversy Media · 35 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/xUI5Tsl2JpY/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">JavaScript Functions Explained</div><div class="video-meta">Traversy Media · 35 мүн</div></div></div>
+        <div class="video-card" onclick="openVideo('R8rmfD9Y5-c','JS Array Methods','Web Dev Simplified · 15 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/R8rmfD9Y5-c/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">JavaScript Array Methods You Must Know</div><div class="video-meta">Web Dev Simplified · 15 мүн</div></div></div>
+      </div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">💡</div><h3>Глава 10 аяктады!</h3><button class="btn-next-chap" onclick="goTo(11,null)">DOM жана Окуяларга өт →</button></div>
+  </div>
+ 
+  <!-- ======== PAGE 11 — DOM ======== -->
+  <div class="page" id="p11">
+    <div class="page-num-bar"><span>JS / Глава 11</span><span class="page-num-center">— 11 / 20 —</span><span>DOM жана Окуялар</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 11 · JavaScript</div><div class="chap-title js">DOM жана Окуялар</div><div class="chap-sub">HTML элементтерин табуу, өзгөртүү жана жаратуу</div></div>
+    <div class="ornament">— ✦ —</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — DOM API</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="c">// ===== ЭЛЕМЕНТТИ ТАБУУ =====</span>
+<span class="k">const</span> <span class="v">баш</span>     = <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"башкы"</span>);
+<span class="k">const</span> <span class="v">бирок</span>   = <span class="v">document</span>.<span class="f">querySelector</span>(<span class="s">".баскыч"</span>);
+<span class="k">const</span> <span class="v">бардыгы</span> = <span class="v">document</span>.<span class="f">querySelectorAll</span>(<span class="s">"p"</span>);
+ 
+<span class="c">// ===== МАЗМУН ӨЗГӨРТҮҮ =====</span>
+<span class="v">баш</span>.<span class="p">textContent</span>  = <span class="s">"Жаңы аталыш"</span>;
+<span class="v">баш</span>.<span class="p">innerHTML</span>    = <span class="s">"&lt;em&gt;Курсив&lt;/em&gt; аталыш"</span>;
+ 
+<span class="c">// ===== СТИЛЬ =====</span>
+<span class="v">баш</span>.<span class="p">style</span>.<span class="p">color</span>      = <span class="s">"#c8922a"</span>;
+<span class="v">баш</span>.<span class="p">style</span>.<span class="p">fontSize</span>   = <span class="s">"32px"</span>;
+<span class="v">баш</span>.<span class="p">style</span>.<span class="p">display</span>    = <span class="s">"none"</span>;
+ 
+<span class="c">// ===== КЛАССТАР =====</span>
+<span class="v">баш</span>.<span class="p">classList</span>.<span class="f">add</span>(<span class="s">"активдүү"</span>);
+<span class="v">баш</span>.<span class="p">classList</span>.<span class="f">remove</span>(<span class="s">"жашыруун"</span>);
+<span class="v">баш</span>.<span class="p">classList</span>.<span class="f">toggle</span>(<span class="s">"ачык"</span>);
+<span class="k">const</span> <span class="v">барбы</span> = <span class="v">баш</span>.<span class="p">classList</span>.<span class="f">contains</span>(<span class="s">"активдүү"</span>);
+ 
+<span class="c">// ===== АТРИБУТТАР =====</span>
+<span class="v">баш</span>.<span class="f">setAttribute</span>(<span class="s">"data-id"</span>, <span class="s">"42"</span>);
+<span class="k">const</span> <span class="v">дата</span> = <span class="v">баш</span>.<span class="f">getAttribute</span>(<span class="s">"data-id"</span>);
+ 
+<span class="c">// ===== ЭЛЕМЕНТ ЖАРАТУУ =====</span>
+<span class="k">const</span> <span class="v">жаңы</span> = <span class="v">document</span>.<span class="f">createElement</span>(<span class="s">"div"</span>);
+<span class="v">жаңы</span>.<span class="p">className</span> = <span class="s">"карточка"</span>;
+<span class="v">жаңы</span>.<span class="p">innerHTML</span> = <span class="s">`&lt;h3&gt;Жаңы карточка&lt;/h3&gt;`</span>;
+<span class="v">document</span>.<span class="p">body</span>.<span class="f">appendChild</span>(<span class="v">жаңы</span>);
+ 
+<span class="c">// ===== ОКУЯЛАР (EVENTS) =====</span>
+<span class="k">const</span> <span class="v">баскыч</span> = <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"btn"</span>);
+ 
+<span class="v">баскыч</span>.<span class="f">addEventListener</span>(<span class="s">"click"</span>, (<span class="v">event</span>) => {
+  <span class="f">console</span>.<span class="f">log</span>(<span class="s">"Басканңыз!"</span>, <span class="v">event</span>.<span class="p">target</span>);
+});
+ 
+<span class="c">// Форма окуясы</span>
+<span class="v">document</span>.<span class="f">querySelector</span>(<span class="s">"form"</span>)
+  .<span class="f">addEventListener</span>(<span class="s">"submit"</span>, (<span class="v">e</span>) => {
+    <span class="v">e</span>.<span class="f">preventDefault</span>(); <span class="c">// Баракты жаңыртпа</span>
+    <span class="k">const</span> <span class="v">маани</span> = <span class="v">e</span>.<span class="p">target</span>.<span class="f">querySelector</span>(<span class="s">"input"</span>).<span class="p">value</span>;
+    <span class="f">alert</span>(<span class="s">`Жибердиңиз: ${<span class="v">маани</span>}`</span>);
+  });</pre></div>
+ 
+    <div class="video-section"><div class="video-label">DOM видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('y17RuWkWdn8','Learn DOM Manipulation','Web Dev Simplified · 18 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/y17RuWkWdn8/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Learn DOM Manipulation in 18 Minutes</div><div class="video-meta">Web Dev Simplified · 18 мүн</div></div></div>
+        <div class="video-card" onclick="openVideo('XcQLi5pB_zk','JavaScript Events Explained','Traversy Media · 20 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/XcQLi5pB_zk/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">JavaScript Events Explained</div><div class="video-meta">Traversy Media · 20 мүн</div></div></div>
+      </div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">🌐</div><h3>Глава 11 аяктады!</h3><button class="btn-next-chap" onclick="goTo(12,null)">API жана Fetchке өт →</button></div>
+  </div>
+ 
+  <!-- ======== PAGE 12 — API ======== -->
+  <div class="page" id="p12">
+    <div class="page-num-bar"><span>JS / Глава 12</span><span class="page-num-center">— 12 / 20 —</span><span>API жана Fetch</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 12 · JavaScript</div><div class="chap-title js">API жана Fetch</div><div class="chap-sub">Серверден маалымат жүктөө — fetch, async/await, JSON</div></div>
+    <div class="ornament">— ✦ —</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Fetch API</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="c">// ===== FETCH API =====</span>
+ 
+<span class="c">// 1. Негизги fetch (Promise)</span>
+<span class="f">fetch</span>(<span class="s">"https://api.example.com/students"</span>)
+  .<span class="f">then</span>(<span class="v">response</span> => <span class="v">response</span>.<span class="f">json</span>())
+  .<span class="f">then</span>(<span class="v">data</span> => {
+    <span class="f">console</span>.<span class="f">log</span>(<span class="v">data</span>);
+  })
+  .<span class="f">catch</span>(<span class="v">error</span> => {
+    <span class="f">console</span>.<span class="f">error</span>(<span class="s">"Ката:"</span>, <span class="v">error</span>);
+  });
+ 
+<span class="c">// 2. Async/Await (заманбап жол)</span>
+<span class="k">async function</span> <span class="f">студенттерди_жүктө</span>() {
+  <span class="k">try</span> {
+    <span class="k">const</span> <span class="v">жооп</span> = <span class="k">await</span> <span class="f">fetch</span>(<span class="s">"https://api.example.com/students"</span>);
+ 
+    <span class="k">if</span> (!<span class="v">жооп</span>.<span class="p">ok</span>) {
+      <span class="k">throw new</span> <span class="f">Error</span>(<span class="s">`HTTP ката: ${<span class="v">жооп</span>.<span class="p">status</span>}`</span>);
+    }
+ 
+    <span class="k">const</span> <span class="v">студенттер</span> = <span class="k">await</span> <span class="v">жооп</span>.<span class="f">json</span>();
+    <span class="f">console</span>.<span class="f">log</span>(<span class="s">"Студенттер:"</span>, <span class="v">студенттер</span>);
+ 
+    <span class="c">// Маалыматты DOM'го жаз</span>
+    <span class="k">const</span> <span class="v">тизме</span> = <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"студент-тизме"</span>);
+    <span class="v">студенттер</span>.<span class="f">forEach</span>(<span class="v">студент</span> => {
+      <span class="v">тизме</span>.<span class="p">innerHTML</span> +=
+        <span class="s">`&lt;li&gt;${<span class="v">студент</span>.<span class="p">аты</span>} — ${<span class="v">студент</span>.<span class="p">упайы</span>}&lt;/li&gt;`</span>;
+    });
+ 
+  } <span class="k">catch</span> (<span class="v">ката</span>) {
+    <span class="f">console</span>.<span class="f">error</span>(<span class="s">"Маалымат жүктөлгөн жок:"</span>, <span class="v">ката</span>);
+  }
+}
+ 
+<span class="f">студенттерди_жүктө</span>();
+ 
+<span class="c">// 3. POST сурамы (маалымат жөнөтүү)</span>
+<span class="k">async function</span> <span class="f">жаңы_студент_кош</span>(<span class="v">студент</span>) {
+  <span class="k">const</span> <span class="v">жооп</span> = <span class="k">await</span> <span class="f">fetch</span>(<span class="s">"/api/students"</span>, {
+    <span class="p">method</span>: <span class="s">"POST"</span>,
+    <span class="p">headers</span>: { <span class="s">"Content-Type"</span>: <span class="s">"application/json"</span> },
+    <span class="p">body</span>: <span class="f">JSON</span>.<span class="f">stringify</span>(<span class="v">студент</span>)
+  });
+  <span class="k">return</span> <span class="v">жооп</span>.<span class="f">json</span>();
+}
+ 
+<span class="f">жаңы_студент_кош</span>({ <span class="p">аты</span>: <span class="s">"Айгүл"</span>, <span class="p">курс</span>: <span class="n">3</span> });</pre></div>
+ 
+    <div class="video-section"><div class="video-label">API жана Fetch видеолор</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('cuEtnrL9-H0','Async JS Crash Course','Traversy Media · 1 саат')"><div class="video-thumb"><img src="https://img.youtube.com/vi/cuEtnrL9-H0/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Async JS Crash Course — Callbacks, Promises, Async Await</div><div class="video-meta">Traversy Media · 1 саат</div></div></div>
+        <div class="video-card" onclick="openVideo('drK3UXaXO2g','Fetch API in JS','Web Dev Simplified · 20 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/drK3UXaXO2g/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Fetch API in JavaScript</div><div class="video-meta">Web Dev Simplified · 20 мүн</div></div></div>
+      </div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">🎯</div><h3>Глава 20 аяктады!</h3><p>Акыркы глава — реалдуу долбоор!</p><button class="btn-next-chap" onclick="goTo(13,null)">Долбоорго өт →</button></div>
+  </div>
+ 
+  <!-- ======== PAGE 13 — PROJECT ======== -->
+  <div class="page" id="p13">
+    <div class="page-num-bar"><span>Долбоор / Глава 20</span><span class="page-num-center">— 13 / 20 —</span><span>Калькулятор Долбоору</span></div>
+    <div class="chap-header"><div class="chap-tag">Глава 20 · Долбоор</div><div class="chap-title js">Калькулятор Жасайбыз!</div><div class="chap-sub">HTML + CSS + JavaScript — үч тил биригип реалдуу долбоор жаратат</div></div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">Акыркы главада биз үйрөнгөн бардык нерсени практикага айлантабыз. HTML менен структура, CSS менен дизайн, JavaScript менен логика — үчөө биригип толук иштеген калькулятор жаратат.</p>
+ 
+    <div id="live-calc-wrap">
+      <div id="project-calc">
+        <div id="pc-display">
+          <div id="pc-expr"></div>
+          <div id="pc-val">0</div>
+        </div>
+        <div id="pc-btns"></div>
+      </div>
+    </div>
+ 
+    <div class="sec-title"><span class="sec-num">13.1</span> HTML Структурасы</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang html">HTML</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="t">&lt;div</span> <span class="a">class</span>=<span class="s">"калькулятор"</span><span class="t">&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="s">"экран"</span><span class="t">&gt;</span>
+    <span class="t">&lt;div</span> <span class="a">id</span>=<span class="s">"туюнтма"</span><span class="t">&gt;&lt;/div&gt;</span>
+    <span class="t">&lt;div</span> <span class="a">id</span>=<span class="s">"маани"</span><span class="t">&gt;</span>0<span class="t">&lt;/div&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="s">"баскычтар"</span><span class="t">&gt;</span>
+    <span class="t">&lt;button</span> <span class="a">class</span>=<span class="s">"оп"</span> <span class="a">onclick</span>=<span class="s">"тазала()"</span><span class="t">&gt;</span>C<span class="t">&lt;/button&gt;</span>
+    <span class="t">&lt;button</span> <span class="a">class</span>=<span class="s">"сан"</span> <span class="a">onclick</span>=<span class="s">"кийле('7')"</span><span class="t">&gt;</span>7<span class="t">&lt;/button&gt;</span>
+    <span class="c">&lt;!-- ... калгандары --&gt;</span>
+    <span class="t">&lt;button</span> <span class="a">class</span>=<span class="s">"барабар"</span> <span class="a">onclick</span>=<span class="s">"жыйынтык()"</span><span class="t">&gt;</span>=<span class="t">&lt;/button&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/div&gt;</span></pre></div>
+ 
+    <div class="sec-title"><span class="sec-num">13.2</span> JavaScript Логикасы</div>
+    <div class="code-wrap"><div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Калькулятор</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+    <pre class="code-pre"><span class="k">let</span> <span class="v">сап</span> = <span class="s">""</span>;
+ 
+<span class="k">function</span> <span class="f">кийле</span>(<span class="v">баскыч</span>) {
+  <span class="v">сап</span> += <span class="v">баскыч</span>;
+  <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"маани"</span>).<span class="p">textContent</span> = <span class="v">сап</span>;
+}
+ 
+<span class="k">function</span> <span class="f">тазала</span>() {
+  <span class="v">сап</span> = <span class="s">""</span>;
+  <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"маани"</span>).<span class="p">textContent</span> = <span class="s">"0"</span>;
+  <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"туюнтма"</span>).<span class="p">textContent</span> = <span class="s">""</span>;
+}
+ 
+<span class="k">function</span> <span class="f">жок_кыл</span>() {
+  <span class="v">сап</span> = <span class="v">сап</span>.<span class="f">slice</span>(<span class="n">0</span>, <span class="n">-1</span>);
+  <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"маани"</span>).<span class="p">textContent</span> = <span class="v">сап</span> || <span class="s">"0"</span>;
+}
+ 
+<span class="k">function</span> <span class="f">жыйынтык</span>() {
+  <span class="k">try</span> {
+    <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"туюнтма"</span>).<span class="p">textContent</span> = <span class="v">сап</span> + <span class="s">" ="</span>;
+    <span class="k">const</span> <span class="v">жооп</span> = <span class="f">Function</span>(<span class="s">'"use strict"; return ('</span> + <span class="v">сап</span> + <span class="s">')'</span>)();
+    <span class="k">const</span> <span class="v">натыйжа</span> = <span class="f">parseFloat</span>(<span class="v">жооп</span>.<span class="f">toFixed</span>(<span class="n">10</span>));
+    <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"маани"</span>).<span class="p">textContent</span> = <span class="v">натыйжа</span>;
+    <span class="v">сап</span> = <span class="f">String</span>(<span class="v">натыйжа</span>);
+  } <span class="k">catch</span> {
+    <span class="v">document</span>.<span class="f">getElementById</span>(<span class="s">"маани"</span>).<span class="p">textContent</span> = <span class="s">"Ката!"</span>;
+    <span class="v">сап</span> = <span class="s">""</span>;
+  }
+}</pre></div>
+ 
+    <div class="video-section"><div class="video-label">Толук Долбоор видеолору</div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideo('j59qQ7YWLxw','Build a Calculator','Web Dev Simplified · 22 мүн')"><div class="video-thumb"><img src="https://img.youtube.com/vi/j59qQ7YWLxw/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Build a Calculator in JavaScript</div><div class="video-meta">Web Dev Simplified · 22 мүн</div></div></div>
+        <div class="video-card" onclick="openVideo('oZbrxtSk0OA','Build 15 JavaScript Projects','freeCodeCamp · 8 саат')"><div class="video-thumb"><img src="https://img.youtube.com/vi/oZbrxtSk0OA/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover;" alt=""><div class="play-overlay"><div class="play-btn-big">▶</div></div></div><div class="video-info"><div class="video-title">Build 15 JavaScript Projects</div><div class="video-meta">freeCodeCamp · 8 саат</div></div></div>
+      </div>
+    </div>
+ 
+    <div class="chap-end" style="background:linear-gradient(135deg,rgba(200,146,42,0.08),rgba(93,62,14,0.06));border-color:rgba(200,146,42,0.3);">
+      <div class="chap-end-icon">🎓</div>
+      <h3>Куттуктайбыз! Окуулук аяктады!</h3>
+      <p>HTML, CSS жана JavaScript — үч тилдин баарын толук өздөштүрдүңүз. Эми өз проектиңизди жасаңыз!</p>
+      <button class="btn-next-chap" onclick="goTo(0,null)">🏠 Башкы бетке кайт</button>
+    </div>
+  </div>
+ 
+
+  <!-- ======== PAGE 14 — CSS ADVANCED ======== -->
+  <div class="page" id="p14">
+    <div class="page-num-bar"><span>CSS / Глава 14</span><span class="page-num-center">— 14 / 20 —</span><span>CSS Өнүккөн Техникалар</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 14 · CSS</div>
+      <div class="chap-title css">CSS Өнүккөн Техникалар</div>
+      <div class="chap-sub">Transform, Box-shadow, Filter жана Custom Properties</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">CSS'тин өнүккөн мүмкүнчүлүктөрү — <strong>transform</strong>, <strong>box-shadow</strong>, <strong>filter</strong> жана <strong>CSS Variables</strong> — заманбап веб-дизайнда кеңири колдонулат. Алар JavaScript жок эле күчтүү визуалдык эффекттер жаратат.</p>
+
+    <div class="sec-title"><span class="sec-num">14.1</span> Transform касиети</div>
+    <p class="prose">Transform элементтерди айландыруу, чоңойтуу, жылдыруу жана ийрейтүүгө мүмкүндүк берет:</p>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — Transform</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">/* Жылдыруу */</span>
+<span class="p">.жылдыр</span> { <span class="a">transform</span>: <span class="f">translateX</span>(<span class="n">50px</span>); }
+<span class="p">.жылдыр2</span> { <span class="a">transform</span>: <span class="f">translate</span>(<span class="n">50px</span>, <span class="n">30px</span>); }
+
+<span class="c">/* Айландыруу */</span>
+<span class="p">.айлан</span> { <span class="a">transform</span>: <span class="f">rotate</span>(<span class="n">45deg</span>); }
+<span class="p">.айлан3д</span> { <span class="a">transform</span>: <span class="f">rotateY</span>(<span class="n">180deg</span>); }
+
+<span class="c">/* Өлчөмүн өзгөртүү */</span>
+<span class="p">.чоңойт</span> { <span class="a">transform</span>: <span class="f">scale</span>(<span class="n">1.5</span>); }
+<span class="p">.кичирет</span> { <span class="a">transform</span>: <span class="f">scale</span>(<span class="n">0.8</span>); }
+
+<span class="c">/* Ийрейтүү */</span>
+<span class="p">.ийрет</span> { <span class="a">transform</span>: <span class="f">skew</span>(<span class="n">20deg</span>); }
+
+<span class="c">/* Айкалыштыруу */</span>
+<span class="p">.баскыч:hover</span> {
+  <span class="a">transform</span>: <span class="f">translateY</span>(<span class="n">-4px</span>) <span class="f">scale</span>(<span class="n">1.02</span>);
+  <span class="a">transition</span>: <span class="v">transform</span> <span class="n">0.3s</span> <span class="v">ease</span>;
+}</pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">14.2</span> Box-shadow жана Filter</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — Box-shadow & Filter</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">/* BOX-SHADOW: x  y  жайылуу  түс */</span>
+<span class="p">.карточка</span> {
+  <span class="a">box-shadow</span>: <span class="n">0 4px 20px</span> <span class="f">rgba</span>(<span class="n">0,0,0,0.12</span>);
+}
+
+<span class="c">/* Бир нече көлөкө */</span>
+<span class="p">.premium</span> {
+  <span class="a">box-shadow</span>:
+    <span class="n">0 2px 4px</span> <span class="f">rgba</span>(<span class="n">0,0,0,0.1</span>),
+    <span class="n">0 20px 40px</span> <span class="f">rgba</span>(<span class="n">0,0,0,0.15</span>);
+}
+
+<span class="c">/* Ички көлөкө */</span>
+<span class="p">.ичинде</span> {
+  <span class="a">box-shadow</span>: <span class="v">inset</span> <span class="n">0 2px 8px</span> <span class="f">rgba</span>(<span class="n">0,0,0,0.2</span>);
+}
+
+<span class="c">/* FILTER — сүрөт эффекттери */</span>
+<span class="p">img:hover</span> {
+  <span class="a">filter</span>: <span class="f">brightness</span>(<span class="n">1.2</span>);
+}
+
+<span class="p">.кара-ак</span> {
+  <span class="a">filter</span>: <span class="f">grayscale</span>(<span class="n">100%</span>);
+}
+
+<span class="p">.жумшак</span> {
+  <span class="a">filter</span>: <span class="f">blur</span>(<span class="n">4px</span>);
+}
+
+<span class="p">.жаркыраган</span> {
+  <span class="a">filter</span>: <span class="f">drop-shadow</span>(<span class="n">0 0 12px</span> <span class="f">rgba</span>(<span class="n">200,146,42,0.6</span>));
+}</pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">14.3</span> CSS Custom Properties (Өзгөрмөлөр)</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS Variables</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">/* :root де аныктоо */</span>
+<span class="p">:root</span> {
+  <span class="a">--негизги</span>: <span class="s">#c8922a</span>;
+  <span class="a">--кошумча</span>: <span class="s">#3d1f0a</span>;
+  <span class="a">--тегерек</span>: <span class="n">8px</span>;
+  <span class="a">--transition</span>: <span class="v">all 0.3s ease</span>;
+}
+
+<span class="c">/* Колдонуу */</span>
+<span class="p">.баскыч</span> {
+  <span class="a">background</span>: <span class="f">var</span>(<span class="a">--негизги</span>);
+  <span class="a">border-radius</span>: <span class="f">var</span>(<span class="a">--тегерек</span>);
+  <span class="a">transition</span>: <span class="f">var</span>(<span class="a">--transition</span>);
+}
+
+<span class="c">/* Демейки маани */</span>
+<span class="p">.элемент</span> {
+  <span class="a">color</span>: <span class="f">var</span>(<span class="a">--өзгөрмө</span>, <span class="s">#333</span>);
+}
+
+<span class="c">/* JavaScript менен өзгөртүү */</span>
+<span class="c">/* document.documentElement.style
+     .setProperty('--негизги', '#ff0000'); */</span></pre>
+    </div>
+
+    <div class="info-box green">
+      <div class="info-label">💡 CSS Variables артыкчылыгы</div>
+      <p class="prose" style="margin:0;">CSS Variables (Custom Properties) бир жерде аныктаган мааниңизди бүткүл сайтта колдонууга мүмкүндүк берет. Темаларды оңой алмаштырса болот — маселен Dark Mode / Light Mode.</p>
+    </div>
+
+    <div class="chap-end"><div class="chap-end-icon">✅</div><h3>Глава 14 аяктады!</h3><p>CSS өнүккөн техникаларын өздөштүрдүңүз!</p><button class="btn-next-chap" onclick="goTo(15,null)">Дизайн принциптерине өт →</button></div>
+  </div>
+
+  <!-- ======== PAGE 15 — DESIGN PRINCIPLES ======== -->
+  <div class="page" id="p15">
+    <div class="page-num-bar"><span>CSS / Глава 15</span><span class="page-num-center">— 15 / 20 —</span><span>Түс теориясы жана Дизайн</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 15 · CSS + Дизайн</div>
+      <div class="chap-title css">Түс Теориясы жана Дизайн</div>
+      <div class="chap-sub">Веб-дизайндын визуалдык принциптери жана түс теориясы</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">Жакшы веб-дизайн — бул жөн гана кооз сүрөт эмес. Ал колдонуучуга маалыматты туура жеткирген, интуитивдүү интерфейс. Бул главада <strong>түс теориясы</strong>, <strong>типография</strong> жана <strong>UI принциптери</strong> каралат.</p>
+
+    <div class="sec-title"><span class="sec-num">15.1</span> Түс модели — HEX, RGB, HSL</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — Түс форматтары</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">/* HEX — 16-лык система */</span>
+<span class="a">color</span>: <span class="s">#c8922a</span>;       <span class="c">/* 6 символ */</span>
+<span class="a">color</span>: <span class="s">#c8922a80</span>;     <span class="c">/* + 80 = 50% ачыктык */</span>
+
+<span class="c">/* RGB — кызыл, жашыл, көк */</span>
+<span class="a">color</span>: <span class="f">rgb</span>(<span class="n">200</span>, <span class="n">146</span>, <span class="n">42</span>);
+<span class="a">color</span>: <span class="f">rgba</span>(<span class="n">200</span>, <span class="n">146</span>, <span class="n">42</span>, <span class="n">0.5</span>);   <span class="c">/* 0.5 = 50% */</span>
+
+<span class="c">/* HSL — ыргак, каныгуу, жарыктык */</span>
+<span class="a">color</span>: <span class="f">hsl</span>(<span class="n">35</span>, <span class="n">65%</span>, <span class="n">47%</span>);
+<span class="a">color</span>: <span class="f">hsla</span>(<span class="n">35</span>, <span class="n">65%</span>, <span class="n">47%</span>, <span class="n">0.8</span>);
+
+<span class="c">/* GRADIENT — Градиент */</span>
+<span class="a">background</span>: <span class="f">linear-gradient</span>(<span class="n">135deg</span>, <span class="s">#c8922a</span>, <span class="s">#3d1f0a</span>);
+<span class="a">background</span>: <span class="f">radial-gradient</span>(<span class="v">circle</span>, <span class="s">#fff</span>, <span class="s">#f5e6c8</span>);
+<span class="a">background</span>: <span class="f">conic-gradient</span>(<span class="s">#c8922a</span>, <span class="s">#3d1f0a</span>, <span class="s">#c8922a</span>);</pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">15.2</span> Типография принциптери</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang css">CSS — Типография</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">/* Иерархия — өлчөм шкаласы */</span>
+<span class="p">h1</span> { <span class="a">font-size</span>: <span class="f">clamp</span>(<span class="n">28px</span>, <span class="n">5vw</span>, <span class="n">56px</span>); }  <span class="c">/* Жооптуу! */</span>
+<span class="p">h2</span> { <span class="a">font-size</span>: <span class="f">clamp</span>(<span class="n">22px</span>, <span class="n">4vw</span>, <span class="n">40px</span>); }
+<span class="p">h3</span> { <span class="a">font-size</span>: <span class="f">clamp</span>(<span class="n">18px</span>, <span class="n">3vw</span>, <span class="n">28px</span>); }
+<span class="p">p</span>  { <span class="a">font-size</span>: <span class="f">clamp</span>(<span class="n">14px</span>, <span class="n">2vw</span>, <span class="n">18px</span>); }
+
+<span class="c">/* Окулуучулук — line-height, letter-spacing */</span>
+<span class="p">body</span> {
+  <span class="a">line-height</span>: <span class="n">1.7</span>;       <span class="c">/* 1.5-1.8 оптималдуу */</span>
+  <span class="a">letter-spacing</span>: <span class="n">0.02em</span>; <span class="c">/* Кичинекей бошолтуу */</span>
+}
+
+<span class="c">/* Баш жазуу */</span>
+<span class="p">.баш-жазуу</span> {
+  <span class="a">letter-spacing</span>: <span class="n">0.1em</span>;
+  <span class="a">text-transform</span>: <span class="v">uppercase</span>;
+  <span class="a">font-weight</span>: <span class="n">700</span>;
+}
+
+<span class="c">/* Текстти кыркуу */</span>
+<span class="p">.кыска</span> {
+  <span class="a">overflow</span>: <span class="v">hidden</span>;
+  <span class="a">text-overflow</span>: <span class="v">ellipsis</span>; <span class="c">/* ... менен бүтөт */</span>
+  <span class="a">white-space</span>: <span class="v">nowrap</span>;
+}</pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">15.3</span> Негизги UI принциптери</div>
+    <div class="table-wrap"><table>
+      <tr><th>Принцип</th><th>Сүрөттөмө</th><th>CSS мисал</th></tr>
+      <tr><td><strong>Контраст</strong></td><td>Текст жана фон ортосунда айырма болушу керек</td><td><code>color: #fff; background: #333;</code></td></tr>
+      <tr><td><strong>Боштук</strong></td><td>Элементтер ортосунда жетиштүү жай</td><td><code>margin: 16px; padding: 20px;</code></td></tr>
+      <tr><td><strong>Тегиздөө</strong></td><td>Элементтер бир сызыкта турушу</td><td><code>display: flex; align-items: center;</code></td></tr>
+      <tr><td><strong>Иерархия</strong></td><td>Маанилүү нерсе чоң/кескин болушу</td><td><code>font-size: 32px; font-weight: 700;</code></td></tr>
+      <tr><td><strong>Кайталоо</strong></td><td>Бир стилде туруктуулук</td><td><code>var(--негизги-түс)</code></td></tr>
+    </table></div>
+
+    <div class="chap-end"><div class="chap-end-icon">🎨</div><h3>Глава 15 аяктады!</h3><p>Дизайн принциптерин өздөштүрдүңүз!</p><button class="btn-next-chap" onclick="goTo(16,null)">JS Объекттерге өт →</button></div>
+  </div>
+
+  <!-- ======== PAGE 16 — JS OBJECTS & CLASSES ======== -->
+  <div class="page" id="p16">
+    <div class="page-num-bar"><span>JS / Глава 16</span><span class="page-num-center">— 16 / 20 —</span><span>Объекттер жана Класстар</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 16 · JavaScript</div>
+      <div class="chap-title js">Объекттер жана Класстар</div>
+      <div class="chap-sub">JavaScript'теги Object Oriented Programming (OOP) негиздери</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">JavaScript'те <strong>объект</strong> (object) — бул касиеттер (properties) жана методдор (methods) чогулган маалымат структурасы. <strong>Класс</strong> (class) — объект жаратуунун шаблону, ал OOP программалоонун негизи.</p>
+
+    <div class="sec-title"><span class="sec-num">16.1</span> Объекттер</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Объекттер</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">// Объект жаратуу</span>
+<span class="k">const</span> <span class="v">студент</span> = {
+  <span class="n">ат</span>: <span class="s">"Айзат Бекова"</span>,
+  <span class="n">жашы</span>: <span class="v">21</span>,
+  <span class="n">университет</span>: <span class="s">"ОшМУ"</span>,
+  <span class="n">курс</span>: <span class="v">3</span>,
+  <span class="n">предметтер</span>: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"JS"</span>],
+
+  <span class="c">// Метод — объект ичиндеги функция</span>
+  <span class="f">тааныштыр</span>() {
+    <span class="k">return</span> <span class="s">`Мен ${<span class="k">this</span>.ат}, ${<span class="k">this</span>.курс}-курс студенти`</span>;
+  },
+
+  <span class="f">предметКош</span>(<span class="v">предмет</span>) {
+    <span class="k">this</span>.предметтер.push(<span class="v">предмет</span>);
+  }
+};
+
+<span class="c">// Касиетке жетүү</span>
+console.log(<span class="v">студент</span>.ат);           <span class="c">// "Айзат Бекова"</span>
+console.log(<span class="v">студент</span>[<span class="s">"жашы"</span>]);     <span class="c">// 21</span>
+console.log(<span class="v">студент</span>.<span class="f">тааныштыр</span>()); <span class="c">// Мен Айзат...</span>
+
+<span class="c">// Destructuring — бөлүп алуу</span>
+<span class="k">const</span> { <span class="v">ат</span>, <span class="v">жашы</span>, <span class="v">курс</span> } = <span class="v">студент</span>;
+
+<span class="c">// Spread оператору</span>
+<span class="k">const</span> <span class="v">жаңы</span> = { ...<span class="v">студент</span>, <span class="n">шаар</span>: <span class="s">"Ош"</span> };
+
+<span class="c">// Object методдору</span>
+Object.keys(<span class="v">студент</span>);    <span class="c">// Ачкычтар</span>
+Object.values(<span class="v">студент</span>);  <span class="c">// Маанилер</span>
+Object.entries(<span class="v">студент</span>); <span class="c">// [[ачкыч, маани], ...]</span></pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">16.2</span> Класстар (ES6+)</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Class</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">// Класс аныктоо</span>
+<span class="k">class</span> <span class="f">Адам</span> {
+  <span class="c">// constructor — объект жараткандагы метод</span>
+  <span class="f">constructor</span>(<span class="v">ат</span>, <span class="v">жашы</span>) {
+    <span class="k">this</span>.ат = <span class="v">ат</span>;
+    <span class="k">this</span>.жашы = <span class="v">жашы</span>;
+  }
+
+  <span class="f">тааныштыр</span>() {
+    <span class="k">return</span> <span class="s">`${<span class="k">this</span>.ат}, ${<span class="k">this</span>.жашы} жашта`</span>;
+  }
+
+  <span class="c">// Статикалык метод — объекттен эмес, класстан чакырылат</span>
+  <span class="k">static</span> <span class="f">жардам</span>() {
+    <span class="k">return</span> <span class="s">"Адам классы ат жана жашты сакталат"</span>;
+  }
+}
+
+<span class="c">// Мурастоо (Inheritance)</span>
+<span class="k">class</span> <span class="f">Студент</span> <span class="k">extends</span> <span class="f">Адам</span> {
+  <span class="f">constructor</span>(<span class="v">ат</span>, <span class="v">жашы</span>, <span class="v">университет</span>) {
+    <span class="k">super</span>(<span class="v">ат</span>, <span class="v">жашы</span>); <span class="c">// Ата-энеден мурастоо</span>
+    <span class="k">this</span>.университет = <span class="v">университет</span>;
+  }
+
+  <span class="f">тааныштыр</span>() {
+    <span class="k">return</span> <span class="k">super</span>.<span class="f">тааныштыр</span>() + <span class="s">`, ${<span class="k">this</span>.университет} студенти`</span>;
+  }
+}
+
+<span class="c">// Объект жаратуу</span>
+<span class="k">const</span> <span class="v">айзат</span> = <span class="k">new</span> <span class="f">Студент</span>(<span class="s">"Айзат"</span>, <span class="v">21</span>, <span class="s">"ОшМУ"</span>);
+console.log(<span class="v">айзат</span>.<span class="f">тааныштыр</span>());
+<span class="c">// Айзат, 21 жашта, ОшМУ студенти</span></pre>
+    </div>
+
+    <div class="quiz-box">
+      <div class="quiz-title">📝 Билимди текшерүү</div>
+      <div class="quiz-q">JavaScript'те класстан объект жаратуу үчүн кайсы ачкыч сөздү колдонобуз?</div>
+      <div class="quiz-opts">
+        <div class="quiz-opt" onclick="qCheck(this,'a','q16a')"><span class="opt-letter">A</span>create</div>
+        <div class="quiz-opt" onclick="qCheck(this,'b','q16a')"><span class="opt-letter">B</span>make</div>
+        <div class="quiz-opt" onclick="qCheck(this,'c','q16a')"><span class="opt-letter">C</span>new</div>
+        <div class="quiz-opt" onclick="qCheck(this,'d','q16a')"><span class="opt-letter">D</span>object</div>
+      </div>
+      <div class="quiz-result" id="qr-q16a"></div>
+    </div>
+    <div class="chap-end"><div class="chap-end-icon">✅</div><h3>Глава 16 аяктады!</h3><button class="btn-next-chap" onclick="goTo(17,null)">Promise жана async/await →</button></div>
+  </div>
+
+  <!-- ======== PAGE 17 — ASYNC JS ======== -->
+  <div class="page" id="p17">
+    <div class="page-num-bar"><span>JS / Глава 17</span><span class="page-num-center">— 17 / 20 —</span><span>Promise жана Async/Await</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 17 · JavaScript</div>
+      <div class="chap-title js">Promise жана Async/Await</div>
+      <div class="chap-sub">Асинхрондуу программалоо — сервер менен иштөө</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">Веб-тиркемелер сервер менен маалымат алмашат — бул операция <strong>убакыт талап кылат</strong>. JavaScript'те асинхрондуу код — Promise, async/await жана Fetch API — менен серверден маалымат алабыз.</p>
+
+    <div class="sec-title"><span class="sec-num">17.1</span> Promise (Убада)</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Promise</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">// Promise 3 абалда болот:
+// pending (күтүүдө), fulfilled (ийгиликтүү), rejected (ката)</span>
+
+<span class="k">const</span> <span class="v">убада</span> = <span class="k">new</span> <span class="f">Promise</span>((<span class="v">resolve</span>, <span class="v">reject</span>) => {
+  <span class="k">const</span> <span class="v">ийгилик</span> = <span class="k">true</span>;
+  <span class="k">if</span> (<span class="v">ийгилик</span>) {
+    <span class="f">resolve</span>(<span class="s">"Маалымат алынды!"</span>);
+  } <span class="k">else</span> {
+    <span class="f">reject</span>(<span class="s">"Ката болду!"</span>);
+  }
+});
+
+<span class="c">// .then() / .catch() менен иштетүү</span>
+<span class="v">убада</span>
+  .then(<span class="v">натыйжа</span> => console.log(<span class="v">натыйжа</span>))
+  .catch(<span class="v">ката</span> => console.error(<span class="v">ката</span>))
+  .finally(() => console.log(<span class="s">"Бүттү"</span>));
+
+<span class="c">// Бир нече Promise бир убакта</span>
+<span class="f">Promise.all</span>([<span class="v">убада1</span>, <span class="v">убада2</span>, <span class="v">убада3</span>])
+  .then(<span class="v">натыйжалар</span> => console.log(<span class="v">натыйжалар</span>));</pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">17.2</span> Async/Await + Fetch API</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — Async/Await + Fetch</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">// async функция — await колдонуу үчүн</span>
+<span class="k">async function</span> <span class="f">колдонуучуларАлуу</span>() {
+  <span class="k">try</span> {
+    <span class="c">// API'ден маалымат алуу</span>
+    <span class="k">const</span> <span class="v">жооп</span> = <span class="k">await</span> <span class="f">fetch</span>(
+      <span class="s">'https://jsonplaceholder.typicode.com/users'</span>
+    );
+
+    <span class="c">// Статусту текшерүү</span>
+    <span class="k">if</span> (!<span class="v">жооп</span>.ok) {
+      <span class="k">throw new</span> <span class="f">Error</span>(<span class="s">`Ката: ${<span class="v">жооп</span>.status}`</span>);
+    }
+
+    <span class="c">// JSON форматка айландыруу</span>
+    <span class="k">const</span> <span class="v">маалымат</span> = <span class="k">await</span> <span class="v">жооп</span>.<span class="f">json</span>();
+    console.log(<span class="v">маалымат</span>);
+    <span class="k">return</span> <span class="v">маалымат</span>;
+
+  } <span class="k">catch</span> (<span class="v">ката</span>) {
+    console.error(<span class="s">"Ката болду:"</span>, <span class="v">ката</span>);
+  }
+}
+
+<span class="c">// POST жиберүү</span>
+<span class="k">async function</span> <span class="f">маалыматЖибер</span>(<span class="v">маалымат</span>) {
+  <span class="k">const</span> <span class="v">жооп</span> = <span class="k">await</span> <span class="f">fetch</span>(<span class="s">'/api/users'</span>, {
+    <span class="n">method</span>: <span class="s">'POST'</span>,
+    <span class="n">headers</span>: { <span class="s">'Content-Type'</span>: <span class="s">'application/json'</span> },
+    <span class="n">body</span>: JSON.<span class="f">stringify</span>(<span class="v">маалымат</span>)
+  });
+  <span class="k">return await</span> <span class="v">жооп</span>.<span class="f">json</span>();
+}
+
+<span class="c">// Функцияны чакыруу</span>
+<span class="f">колдонуучуларАлуу</span>();</pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">17.3</span> JSON форматы</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JSON</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">// JSON — JavaScript Object Notation
+// Маалымат алмашуунун стандарты</span>
+
+<span class="c">// JSON мисалы:</span>
+<span class="c">// {
+//   "ат": "Айзат",
+//   "жашы": 21,
+//   "студентби": true,
+//   "предметтер": ["HTML", "CSS", "JS"],
+//   "дарек": { "шаар": "Ош", "өлкө": "КР" }
+// }</span>
+
+<span class="c">// JS → JSON (stringify)</span>
+<span class="k">const</span> <span class="v">js_obj</span> = { <span class="n">ат</span>: <span class="s">"Айзат"</span>, <span class="n">жашы</span>: <span class="v">21</span> };
+<span class="k">const</span> <span class="v">json_саб</span> = JSON.<span class="f">stringify</span>(<span class="v">js_obj</span>);
+<span class="c">// '{"ат":"Айзат","жашы":21}'</span>
+
+<span class="c">// JSON → JS (parse)</span>
+<span class="k">const</span> <span class="v">жооп_текст</span> = <span class="s">'{"ат":"Айзат","жашы":21}'</span>;
+<span class="k">const</span> <span class="v">js_маалымат</span> = JSON.<span class="f">parse</span>(<span class="v">жооп_текст</span>);
+console.log(<span class="v">js_маалымат</span>.ат); <span class="c">// "Айзат"</span>
+
+<span class="c">// Иримделген JSON (pretty print)</span>
+JSON.<span class="f">stringify</span>(<span class="v">js_obj</span>, <span class="k">null</span>, <span class="v">2</span>);</pre>
+    </div>
+
+    <div class="chap-end"><div class="chap-end-icon">✅</div><h3>Глава 17 аяктады!</h3><button class="btn-next-chap" onclick="goTo(18,null)">LocalStorage →</button></div>
+  </div>
+
+  <!-- ======== PAGE 18 — LOCALSTORAGE ======== -->
+  <div class="page" id="p18">
+    <div class="page-num-bar"><span>JS / Глава 18</span><span class="page-num-center">— 18 / 20 —</span><span>LocalStorage жана Session</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 18 · JavaScript</div>
+      <div class="chap-title js">LocalStorage жана SessionStorage</div>
+      <div class="chap-sub">Браузерде маалымат сактоо — колдонуучу маалыматын эстөө</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap"><strong>LocalStorage</strong> — браузерде маалымат сактоонун оңой жолу. Бет жабылса да, компьютер өчсө да маалымат сакталып кала берет. Колдонуучунун тандоолорун, темасын, тиркелгисин сактоо үчүн идеалдуу.</p>
+
+    <div class="sec-title"><span class="sec-num">18.1</span> LocalStorage API</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — LocalStorage</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">// ЖАЗУУ — setItem(ачкыч, маани)</span>
+localStorage.<span class="f">setItem</span>(<span class="s">'колдонуучу_аты'</span>, <span class="s">'Айзат'</span>);
+localStorage.<span class="f">setItem</span>(<span class="s">'тема'</span>, <span class="s">'dark'</span>);
+
+<span class="c">// Объект сактоо (JSON.stringify керек!)</span>
+<span class="k">const</span> <span class="v">студент</span> = { <span class="n">ат</span>: <span class="s">"Айзат"</span>, <span class="n">упай</span>: <span class="v">95</span> };
+localStorage.<span class="f">setItem</span>(<span class="s">'студент'</span>, JSON.<span class="f">stringify</span>(<span class="v">студент</span>));
+
+<span class="c">// ОКУУ — getItem(ачкыч)</span>
+<span class="k">const</span> <span class="v">ат</span> = localStorage.<span class="f">getItem</span>(<span class="s">'колдонуучу_аты'</span>);
+console.log(<span class="v">ат</span>); <span class="c">// 'Айзат'</span>
+
+<span class="c">// Объектти окуу (JSON.parse керек!)</span>
+<span class="k">const</span> <span class="v">сакталган</span> = JSON.<span class="f">parse</span>(
+  localStorage.<span class="f">getItem</span>(<span class="s">'студент'</span>)
+);
+
+<span class="c">// ЖОК КЫЛУУ</span>
+localStorage.<span class="f">removeItem</span>(<span class="s">'тема'</span>);  <span class="c">// Бирди жок кыл</span>
+localStorage.<span class="f">clear</span>();              <span class="c">// Баарын тазала</span>
+
+<span class="c">// ТЕКШЕРҮҮ</span>
+<span class="k">if</span> (localStorage.<span class="f">getItem</span>(<span class="s">'тема'</span>) === <span class="s">'dark'</span>) {
+  document.body.classList.<span class="f">add</span>(<span class="s">'dark-mode'</span>);
+}</pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">18.2</span> Dark Mode мисалы</div>
+    <div class="demo-box">
+      <div class="demo-head">
+        <span class="demo-label">🌙 Dark Mode — LocalStorage менен</span>
+        <button class="demo-run" onclick="runDemo('demo18ed','demo18out')">▶ Иштет</button>
+      </div>
+      <textarea class="demo-editor" id="demo18ed">&lt;style&gt;
+  body { font-family: serif; padding: 20px; background: #fff; color: #333; transition: all 0.3s; }
+  body.dark { background: #1a1a2e; color: #eee; }
+  button { padding: 10px 24px; border: none; border-radius: 6px; cursor: pointer;
+           background: #c8922a; color: white; font-size: 14px; margin: 10px 0; }
+  #кабар { margin-top: 12px; font-style: italic; color: #888; font-size: 13px; }
+&lt;/style&gt;
+&lt;h2&gt;🌙 Dark Mode Мисалы&lt;/h2&gt;
+&lt;button onclick="темаАлмаштыр()"&gt;Теманы алмаштыр&lt;/button&gt;
+&lt;p id="кабар"&gt;Тема: Жарык&lt;/p&gt;
+&lt;script&gt;
+  function темаАлмаштыр() {
+    const болдубу = document.body.classList.toggle('dark');
+    const тема = болдубу ? 'dark' : 'light';
+    localStorage.setItem('тема', тема);
+    document.getElementById('кабар').textContent = 'Тема: ' + (болдубу ? 'Күңүрт' : 'Жарык');
+  }
+  // Сакталган теманы жүктөө
+  if (localStorage.getItem('тема') === 'dark') {
+    document.body.classList.add('dark');
+    document.getElementById('кабар').textContent = 'Тема: Күңүрт';
+  }
+&lt;/script&gt;</textarea>
+      <div class="demo-output"><iframe id="demo18out"></iframe></div>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">18.3</span> SessionStorage айырмасы</div>
+    <div class="table-wrap"><table>
+      <tr><th>Касиет</th><th>LocalStorage</th><th>SessionStorage</th></tr>
+      <tr><td>Сакталуу мөөнөтү</td><td>Чексиз (тазаламаганча)</td><td>Өтмөк жабылганча</td></tr>
+      <tr><td>Максималдуу өлчөм</td><td>5-10 MB</td><td>5-10 MB</td></tr>
+      <tr><td>Маалымат түрү</td><td>Текст (string)</td><td>Текст (string)</td></tr>
+      <tr><td>API</td><td>localStorage.setItem()</td><td>sessionStorage.setItem()</td></tr>
+      <tr><td>Колдонуу</td><td>Темалар, тиркелгилер</td><td>Убактылуу форма маалыматы</td></tr>
+    </table></div>
+
+    <div class="chap-end"><div class="chap-end-icon">✅</div><h3>Глава 18 аяктады!</h3><button class="btn-next-chap" onclick="goTo(19,null)">Долбоор: To-Do Тизмеси →</button></div>
+  </div>
+
+  <!-- ======== PAGE 19 — PROJECT TODO ======== -->
+  <div class="page" id="p19">
+    <div class="page-num-bar"><span>Долбоор / Глава 19</span><span class="page-num-center">— 19 / 20 —</span><span>To-Do Тизмеси Долбоору</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 19 · Долбоор</div>
+      <div class="chap-title js">To-Do Тизмеси Долбоору</div>
+      <div class="chap-sub">HTML + CSS + JavaScript — бардык билимди бир долбоорго бириктиребиз</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+    <p class="prose drop-cap">Бул главада <strong>HTML</strong>, <strong>CSS</strong> жана <strong>JavaScript</strong>'тин бардык өздөштүргөн билимиңизди колдонуп, <strong>To-Do тизмеси</strong> (милдеттер тизмеси) жасайбыз. Тизме <strong>LocalStorage</strong>'те сакталат.</p>
+
+    <div class="sec-title"><span class="sec-num">19.1</span> HTML структурасы</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang html">HTML — To-Do</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="t">&lt;div</span> <span class="a">class</span>=<span class="s">"колдонмо"</span><span class="t">&gt;</span>
+  <span class="t">&lt;h1&gt;</span>📝 Милдеттер Тизмеси<span class="t">&lt;/h1&gt;</span>
+
+  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="s">"киргизүү-бөлүм"</span><span class="t">&gt;</span>
+    <span class="t">&lt;input</span>
+      <span class="a">type</span>=<span class="s">"text"</span>
+      <span class="a">id</span>=<span class="s">"жаңы-милдет"</span>
+      <span class="a">placeholder</span>=<span class="s">"Жаңы милдет жаз..."</span>
+    <span class="t">&gt;</span>
+    <span class="t">&lt;button</span> <span class="a">onclick</span>=<span class="s">"кошуу()"</span><span class="t">&gt;</span>Кош<span class="t">&lt;/button&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+
+  <span class="t">&lt;ul</span> <span class="a">id</span>=<span class="s">"тизме"</span><span class="t">&gt;&lt;/ul&gt;</span>
+
+  <span class="t">&lt;div</span> <span class="a">class</span>=<span class="s">"статистика"</span><span class="t">&gt;</span>
+    <span class="t">&lt;span</span> <span class="a">id</span>=<span class="s">"калган"</span><span class="t">&gt;</span>0 милдет калды<span class="t">&lt;/span&gt;</span>
+    <span class="t">&lt;button</span> <span class="a">onclick</span>=<span class="s">"баарынТазала()"</span><span class="t">&gt;</span>Баарын тазала<span class="t">&lt;/button&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/div&gt;</span></pre>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">19.2</span> JavaScript логикасы</div>
+    <div class="code-wrap">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang js">JavaScript — To-Do Logic</span><button class="copy-btn" onclick="copyCode(this)">Көчүр</button></div>
+      <pre class="code-pre"><span class="c">// LocalStorage'тен жүктөө</span>
+<span class="k">let</span> <span class="v">тизме</span> = JSON.<span class="f">parse</span>(
+  localStorage.<span class="f">getItem</span>(<span class="s">'милдеттер'</span>)
+) || [];
+
+<span class="k">function</span> <span class="f">кошуу</span>() {
+  <span class="k">const</span> <span class="v">input</span> = document.<span class="f">getElementById</span>(<span class="s">'жаңы-милдет'</span>);
+  <span class="k">const</span> <span class="v">текст</span> = <span class="v">input</span>.value.<span class="f">trim</span>();
+  <span class="k">if</span> (!<span class="v">текст</span>) <span class="k">return</span>;
+
+  <span class="v">тизме</span>.<span class="f">push</span>({ <span class="n">id</span>: Date.now(), <span class="n">текст</span>: <span class="v">текст</span>, <span class="n">аткарылдыбы</span>: <span class="k">false</span> });
+  <span class="v">input</span>.value = <span class="s">''</span>;
+  <span class="f">сакта</span>();
+  <span class="f">чийип_бер</span>();
+}
+
+<span class="k">function</span> <span class="f">аткарылды</span>(<span class="v">id</span>) {
+  <span class="k">const</span> <span class="v">милдет</span> = <span class="v">тизме</span>.<span class="f">find</span>(<span class="v">т</span> => <span class="v">т</span>.id === <span class="v">id</span>);
+  <span class="k">if</span> (<span class="v">милдет</span>) <span class="v">милдет</span>.аткарылдыбы = !<span class="v">милдет</span>.аткарылдыбы;
+  <span class="f">сакта</span>();
+  <span class="f">чийип_бер</span>();
+}
+
+<span class="k">function</span> <span class="f">жок_кыл</span>(<span class="v">id</span>) {
+  <span class="v">тизме</span> = <span class="v">тизме</span>.<span class="f">filter</span>(<span class="v">т</span> => <span class="v">т</span>.id !== <span class="v">id</span>);
+  <span class="f">сакта</span>();
+  <span class="f">чийип_бер</span>();
+}
+
+<span class="k">function</span> <span class="f">сакта</span>() {
+  localStorage.<span class="f">setItem</span>(<span class="s">'милдеттер'</span>, JSON.<span class="f">stringify</span>(<span class="v">тизме</span>));
+}
+
+<span class="k">function</span> <span class="f">чийип_бер</span>() {
+  <span class="k">const</span> <span class="v">ul</span> = document.<span class="f">getElementById</span>(<span class="s">'тизме'</span>);
+  <span class="v">ul</span>.innerHTML = <span class="v">тизме</span>.<span class="f">map</span>(<span class="v">т</span> => <span class="s">`
+    &lt;li class="${<span class="v">т</span>.аткарылдыбы ? 'аткарылды' : ''}"&gt;
+      &lt;input type="checkbox" ${<span class="v">т</span>.аткарылдыбы?'checked':''} 
+             onchange="аткарылды(${<span class="v">т</span>.id})"&gt;
+      &lt;span&gt;${<span class="v">т</span>.текст}&lt;/span&gt;
+      &lt;button onclick="жок_кыл(${<span class="v">т</span>.id})"&gt;✕&lt;/button&gt;
+    &lt;/li&gt;
+  `</span>).<span class="f">join</span>(<span class="s">''</span>);
+  <span class="k">const</span> <span class="v">калган</span> = <span class="v">тизме</span>.<span class="f">filter</span>(<span class="v">т</span> => !<span class="v">т</span>.аткарылдыбы).length;
+  document.<span class="f">getElementById</span>(<span class="s">'калган'</span>).textContent = <span class="s">`${<span class="v">калган</span>} милдет калды`</span>;
+}
+<span class="f">чийип_бер</span>(); <span class="c">// Баштоодо чакыр</span></pre>
+    </div>
+
+    <div class="demo-box">
+      <div class="demo-head">
+        <span class="demo-label">📝 To-Do App — Иштетип көр</span>
+        <button class="demo-run" onclick="runDemo('demo19ed','demo19out')">▶ Иштет</button>
+      </div>
+      <textarea class="demo-editor" id="demo19ed" style="min-height:80px;">&lt;!-- Иштет баскычын бас! --&gt;</textarea>
+      <div class="demo-output"><iframe id="demo19out" srcdoc="&lt;style&gt;
+        body{font-family:serif;padding:16px;background:#fdf6ed;margin:0}
+        h2{color:#3d1f0a;margin-bottom:12px}
+        .киргизүү{display:flex;gap:8px;margin-bottom:16px}
+        input{flex:1;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:14px}
+        .кош{background:#c8922a;color:white;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-size:14px}
+        ul{list-style:none;padding:0}
+        li{display:flex;align-items:center;gap:10px;padding:10px;background:white;border-radius:6px;margin-bottom:8px;border:1px solid #eee}
+        li span{flex:1}
+        li.done span{text-decoration:line-through;color:#999}
+        .жок{background:none;border:none;color:#c00;cursor:pointer;font-size:16px}
+        .статус{font-size:12px;color:#999;text-align:center;margin-top:12px}
+      &lt;/style&gt;
+      &lt;h2&gt;📝 Милдеттер Тизмеси&lt;/h2&gt;
+      &lt;div class='киргизүү'&gt;
+        &lt;input id='inp' placeholder='Жаңы милдет...' onkeydown='if(event.key===&quot;Enter&quot;)кошуу()'&gt;
+        &lt;button class='кош' onclick='кошуу()'&gt;+Кош&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;ul id='list'&gt;&lt;/ul&gt;
+      &lt;div class='статус' id='stat'&gt;&lt;/div&gt;
+      &lt;script&gt;
+        let d=[];
+        function кошуу(){const v=document.getElementById('inp').value.trim();if(!v)return;d.push({id:Date.now(),t:v,done:false});document.getElementById('inp').value='';render();}
+        function toggle(id){const i=d.find(x=>x.id===id);if(i)i.done=!i.done;render();}
+        function del(id){d=d.filter(x=>x.id!==id);render();}
+        function render(){document.getElementById('list').innerHTML=d.map(i=>'&lt;li class=&quot;'+(i.done?'done':'')+'&quot;&gt;&lt;input type=checkbox '+(i.done?'checked':'')+' onchange=&quot;toggle('+i.id+')&quot;&gt;&lt;span&gt;'+i.t+'&lt;/span&gt;&lt;button class=жок onclick=&quot;del('+i.id+')&quot;&gt;✕&lt;/button&gt;&lt;/li&gt;').join('');const r=d.filter(x=>!x.done).length;document.getElementById('stat').textContent=d.length?r+' милдет калды / Баары: '+d.length:'';}
+      &lt;/script&gt;"></iframe></div>
+    </div>
+
+    <div class="chap-end"><div class="chap-end-icon">🚀</div><h3>Глава 19 аяктады!</h3><button class="btn-next-chap" onclick="goTo(20,null)">Жыйынтыкка өт →</button></div>
+  </div>
+
+  <!-- ======== PAGE 20 — CONCLUSION ======== -->
+  <div class="page" id="p20">
+    <div class="page-num-bar"><span>Жыйынтык / Глава 20</span><span class="page-num-center">— 20 / 20 —</span><span>Жыйынтык жана Маалымат булактары</span></div>
+    <div class="chap-header">
+      <div class="chap-tag">Глава 20 · Жыйынтык</div>
+      <div class="chap-title" style="color:#8b4513;">Жыйынтык жана Алдыга Жол</div>
+      <div class="chap-sub">Окуулукту бүтүрдүңүз — эмне үйрөндүңүз жана андан кийин эмне?</div>
+    </div>
+    <div class="ornament">— ✦ —</div>
+
+    <p class="prose drop-cap">Куттуктайбыз! Сиз <strong>HTML</strong>, <strong>CSS</strong> жана <strong>JavaScript</strong>'тин негиздерин жана орто деңгээлдеги билимдерди өздөштүрдүңүз. Бул — заманбап веб-программалоонун күчтүү негизи.</p>
+
+    <div class="sec-title"><span class="sec-num">20.1</span> Эмнелер үйрөндүңүз?</div>
+    <div class="table-wrap"><table>
+      <tr><th>Тема</th><th>Глава</th><th>Негизги билим</th></tr>
+      <tr><td>HTML Негиздери</td><td>01–04</td><td>Теглер, атрибуттар, формалар, семантика</td></tr>
+      <tr><td>CSS Негиздери</td><td>05–08</td><td>Стиль, сайлагычтар, Flexbox, Grid, анимация</td></tr>
+      <tr><td>CSS Өнүккөн</td><td>14–15</td><td>Transform, filter, дизайн принциптери</td></tr>
+      <tr><td>JavaScript</td><td>09–13</td><td>Негиздер, DOM, окуялар, API, Калькулятор</td></tr>
+      <tr><td>JS Өнүккөн</td><td>16–18</td><td>Классы, Promise/async, LocalStorage</td></tr>
+      <tr><td>Долбоорлор</td><td>13, 19</td><td>Калькулятор, To-Do тизмеси</td></tr>
+    </table></div>
+
+    <div class="sec-title"><span class="sec-num">20.2</span> Андан кийин эмне үйрөнүш керек?</div>
+    <div class="info-box">
+      <div class="info-label">🚀 Кийинки кадамдар</div>
+      <ul style="font-family:serif;font-size:14px;line-height:2;color:#5c3a1a;padding-left:20px;margin:0;">
+        <li><strong>Git & GitHub</strong> — Код версия башкаруу системасы</li>
+        <li><strong>React.js</strong> — Заманбап JavaScript UI китепканасы</li>
+        <li><strong>Node.js</strong> — Серверде JavaScript иштетүү</li>
+        <li><strong>SQL / MongoDB</strong> — Маалымат базасы</li>
+        <li><strong>TypeScript</strong> — JavaScript'тин катуу типтүү версиясы</li>
+        <li><strong>Next.js / Vue.js</strong> — Фреймворктар</li>
+      </ul>
+    </div>
+
+    <div class="sec-title"><span class="sec-num">20.3</span> Маалымат булактары</div>
+    <div class="table-wrap"><table>
+      <tr><th>Ресурс</th><th>Дареги</th><th>Тили</th></tr>
+      <tr><td>MDN Web Docs</td><td>developer.mozilla.org</td><td>Англис/Орус</td></tr>
+      <tr><td>W3Schools</td><td>w3schools.com</td><td>Англис</td></tr>
+      <tr><td>freeCodeCamp</td><td>freecodecamp.org</td><td>Англис</td></tr>
+      <tr><td>The Odin Project</td><td>theodinproject.com</td><td>Англис</td></tr>
+      <tr><td>CSS-Tricks</td><td>css-tricks.com</td><td>Англис</td></tr>
+      <tr><td>JavaScript.info</td><td>javascript.info</td><td>Орус/Англис</td></tr>
+    </table></div>
+
+    <div class="chap-end" style="background:linear-gradient(135deg,rgba(200,146,42,0.1),rgba(93,62,14,0.08));border-color:rgba(200,146,42,0.4);">
+      <div class="chap-end-icon">🎓</div>
+      <h3>Куттуктайбыз! Окуулук аяктады!</h3>
+      <p style="color:#5c3a1a;">ОшМУ · Математика, Физика, Техника жана Информациялык Технологиялар Институту<br>
+      Колдонмо Математика, Информатика жана Графикалык Дизайн кафедрасы<br>
+      <em>Дипломдук иш · 2026</em></p>
+      <button class="btn-next-chap" onclick="goTo(0,null)">🏠 Башкы бетке кайт</button>
+    </div>
+  </div>
+
+</div><!-- end .main -->
+</div><!-- end #app -->
+ 
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-inner">
+    <div class="video-modal-head">
+      <span class="video-modal-title" id="modal-title">Видео</span>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <a id="modal-yt-link" href="#" target="_blank" rel="noopener"
+           style="font-size:11px;color:#fff;opacity:0.7;text-decoration:none;border:1px solid rgba(255,255,255,0.3);padding:3px 8px;border-radius:4px;white-space:nowrap;">
+          ▶ YouTube'да ач
+        </a>
+        <button class="modal-close" onclick="closeVideo()">✕</button>
+      </div>
+    </div>
+    <div class="video-modal-frame" style="position:relative;">
+      <iframe id="modal-frame" src="" allowfullscreen allow="autoplay"
+        style="width:100%;height:100%;border:none;"
+        onerror="document.getElementById('yt-fallback').style.display='flex'"></iframe>
+      <div id="yt-fallback" style="display:none;position:absolute;inset:0;background:#111;
+           align-items:center;justify-content:center;flex-direction:column;gap:12px;color:#fff;">
+        <div style="font-size:32px;">▶</div>
+        <p style="font-size:13px;opacity:0.8;margin:0;">Видео бул жерде жүктөлгөн жок</p>
+        <a id="yt-fallback-link" href="#" target="_blank"
+           style="background:#c00;color:#fff;padding:10px 20px;border-radius:6px;
+                  text-decoration:none;font-size:13px;font-weight:bold;">
+          YouTube'да көр →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<script>
+// ===== COVER =====
+function openTextbook(){
+  document.getElementById('cover-page').style.display='none';
+  
+}
+ 
+// ===== NAVIGATION =====
+const TOTAL=21;
+let cur=0;
+const visited=new Set([0]);
+ 
+const labels=['Титулдук барак',
+  'HTML негиздери','Теглер жана атрибуттар','Формалар жана таблицалар','Семантикалык HTML',
+  'CSS негиздери','Сайлагычтар жана касиеттер','Flexbox жана Grid','Анимациялар & Media Query',
+  'JS негиздери','Функциялар жана массивдер','DOM жана окуялар','API жана Fetch','Долбоор — Калькулятор',
+  'Transform & Filter','Түс теориясы & Дизайн',
+  'Объекттер & Класстар','Promise & Async/Await','LocalStorage',
+  'To-Do Долбоору','Жыйынтык'];
+ 
+const answers={q1a:'b',q2a:'b',q5a:'b',q9a:'c',q16a:'c'};
+ 
+function goTo(idx, navEl){
+  // 1. Бардык беттерди жашыр
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ 
+  // 2. Тандалган бетти ачуу
+  const targetPage = document.getElementById('p'+idx);
+  if(!targetPage) return;
+  targetPage.classList.add('active');
+ 
+  // 3. Навигациядагы активдүү абалды жаңыртуу
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  // data-idx аркылуу туура пункту таап белгилейбиз
+  const matchNav = document.querySelector('.nav-item[data-idx="'+idx+'"]');
+  if(matchNav) matchNav.classList.add('active');
+ 
+  // 4. Breadcrumb жаңыртуу
+  document.getElementById('bc').textContent = labels[idx] || '';
+ 
+  // 5. Абалды жаңыртуу
+  cur = idx;
+  visited.add(idx);
+  updateProgress();
+ 
+  // 6. Жогоруга сыдыруу
+  window.scrollTo({top:0, behavior:'smooth'});
+  // Мобилде сайдбарды жаап коюу
+  document.getElementById('sidebar').classList.remove('open');
+ 
+  // 7. Баскычтарды жаңыртуу
+  document.getElementById('btn-prev').disabled = (idx === 0);
+  document.getElementById('btn-next').disabled = (idx === TOTAL-1);
+ 
+  // 8. Калькуляторду куруу (акыркы глава)
+  if(idx === 13) buildCalc();
+}
+ 
+function prev(){ if(cur > 0) goTo(cur-1, null); }
+function next(){ if(cur < TOTAL-1) goTo(cur+1, null); }
+ 
+function updateProgress(){
+  // HTML: 1–4, CSS: 5–8, JS: 9–13
+  const htmlVisited = [1,2,3,4].filter(i=>visited.has(i)).length;
+  const cssVisited  = [5,6,7,8].filter(i=>visited.has(i)).length;
+  const jsVisited   = [9,10,11,12,13,16,17,18,19].filter(i=>visited.has(i)).length;
+ 
+  const hp = Math.round((htmlVisited/4)*100);
+  const cp = Math.round((cssVisited/4)*100);
+  const jp = Math.round((jsVisited/9)*100);
+ 
+  document.getElementById('pfill-html').style.width = hp+'%';
+  document.getElementById('pfill-css').style.width  = cp+'%';
+  document.getElementById('pfill-js').style.width   = jp+'%';
+  document.getElementById('pct-html').textContent   = hp+'%';
+  document.getElementById('pct-css').textContent    = cp+'%';
+  document.getElementById('pct-js').textContent     = jp+'%';
+}
+ 
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+}
+ 
+// ===== QUIZ =====
+function qCheck(el,chosen,qId){
+  const cont=el.closest('.quiz-opts');
+  if(cont.dataset.done)return;
+  cont.dataset.done='1';
+  cont.querySelectorAll('.quiz-opt').forEach(o=>{o.style.cursor='default';o.classList.add('done');});
+  const res=document.getElementById('qr-'+qId);
+  if(chosen===answers[qId]){
+    el.classList.add('correct');
+    res.textContent='✅ Туура! Жакшы болдуңуз!';
+    res.className='quiz-result show ok';
+  } else {
+    el.classList.add('wrong');
+    const letters=['a','b','c','d'];
+    cont.querySelectorAll('.quiz-opt').forEach((o,i)=>{if(letters[i]===answers[qId])o.classList.add('correct');});
+    res.textContent='❌ Туура эмес. Туура жооп жашыл менен белгиленди.';
+    res.className='quiz-result show err';
+  }
+}
+ 
+// ===== COPY =====
+function copyCode(btn){
+  const pre=btn.closest('.code-wrap').querySelector('pre');
+  navigator.clipboard.writeText(pre.innerText).then(()=>{
+    btn.textContent='✓ Көчүрүлдү';
+    setTimeout(()=>btn.textContent='Көчүр',2000);
+  });
+}
+ 
+// ===== DEMO =====
+function runDemo(edId,outId){
+  const ed=document.getElementById(edId);
+  const out=document.getElementById(outId);
+  out.srcdoc=ed.value;
+}
+ 
+// ===== VIDEO =====
+function openVideo(id,title,meta){
+  document.getElementById('modal-title').textContent=title+' · '+meta;
+  document.getElementById('modal-yt-link').href='https://www.youtube.com/watch?v='+id;
+  var fb=document.getElementById('yt-fallback-link');if(fb)fb.href='https://www.youtube.com/watch?v='+id;
+  var fbd=document.getElementById('yt-fallback');if(fbd)fbd.style.display='none';
+  // Use youtube-nocookie to avoid embedding restrictions
+  document.getElementById('modal-frame').src=
+    'https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
+  document.getElementById('videoModal').classList.add('open');
+}
+ 
+function closeVideo(){
+  document.getElementById('videoModal').classList.remove('open');
+  document.getElementById('modal-frame').src='';
+}
+ 
+document.getElementById('videoModal').addEventListener('click',function(e){
+  if(e.target===this)closeVideo();
+});
+ 
+// ===== CALCULATOR =====
+function buildCalc(){
+  const btns=document.getElementById('pc-btns');
+  if(!btns||btns.children.length>0)return;
+  const disp=document.getElementById('pc-val');
+  const expr=document.getElementById('pc-expr');
+  let str='';
+ 
+  const layout=[
+    {l:'C',  a:()=>{str='';disp.textContent='0';expr.textContent='';}, t:'op'},
+    {l:'±',  a:()=>{str=str.startsWith('-')?str.slice(1):str?'-'+str:str;disp.textContent=str||'0';}, t:'op'},
+    {l:'%',  a:()=>{if(str){str=String(parseFloat(str)/100);disp.textContent=str;}}, t:'op'},
+    {l:'÷',  a:()=>{str+='/';disp.textContent=str;}, t:'main'},
+    {l:'7',  a:()=>{str+='7';disp.textContent=str;}, t:'num'},
+    {l:'8',  a:()=>{str+='8';disp.textContent=str;}, t:'num'},
+    {l:'9',  a:()=>{str+='9';disp.textContent=str;}, t:'num'},
+    {l:'×',  a:()=>{str+='*';disp.textContent=str;}, t:'main'},
+    {l:'4',  a:()=>{str+='4';disp.textContent=str;}, t:'num'},
+    {l:'5',  a:()=>{str+='5';disp.textContent=str;}, t:'num'},
+    {l:'6',  a:()=>{str+='6';disp.textContent=str;}, t:'num'},
+    {l:'−',  a:()=>{str+='-';disp.textContent=str;}, t:'main'},
+    {l:'1',  a:()=>{str+='1';disp.textContent=str;}, t:'num'},
+    {l:'2',  a:()=>{str+='2';disp.textContent=str;}, t:'num'},
+    {l:'3',  a:()=>{str+='3';disp.textContent=str;}, t:'num'},
+    {l:'+',  a:()=>{str+='+';disp.textContent=str;}, t:'main'},
+    {l:'⌫',  a:()=>{str=str.slice(0,-1);disp.textContent=str||'0';}, t:'num'},
+    {l:'0',  a:()=>{str+='0';disp.textContent=str;}, t:'num'},
+    {l:'.',  a:()=>{if(!str.includes('.'))str+='.';disp.textContent=str;}, t:'num'},
+    {l:'=',  a:()=>{
+      try{
+        expr.textContent=str+' =';
+        const r=Function('"use strict";return('+str+')')();
+        const res=parseFloat(r.toFixed(10));
+        disp.textContent=res;
+        str=String(res);
+      }catch{disp.textContent='Ката';str='';}
+    }, t:'eq'},
+  ];
+ 
+  const styles={
+    eq:  'background:#c8922a;color:#fff;border-color:#c8922a;',
+    main:'background:rgba(139,69,19,0.2);color:#8b4513;border-color:rgba(139,69,19,0.3);',
+    op:  'background:#2a1f0f;color:#8a7050;border-color:#3a2a10;',
+    num: 'background:#2a1f0f;color:#f0e0c0;border-color:#3a2a10;',
+  };
+ 
+  layout.forEach(b=>{
+    const btn=document.createElement('button');
+    btn.textContent=b.l;
+    btn.onclick=b.a;
+    btn.style.cssText=`padding:12px 4px;border-radius:8px;border:1px solid;${styles[b.t]}font-family:'Courier New', Courier, monospace;font-size:14px;cursor:pointer;font-weight:700;transition:opacity 0.15s;`;
+    btn.addEventListener('mouseenter',()=>btn.style.opacity='.75');
+    btn.addEventListener('mouseleave',()=>btn.style.opacity='1');
+    btns.appendChild(btn);
+  });
+}
+ 
+// ===== KEYBOARD =====
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight')next();
+  if(e.key==='ArrowLeft')prev();
+});
+ 
+updateProgress();
+</script>
+</body>
+</html>
